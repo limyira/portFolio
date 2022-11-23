@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ThemeBtn from "./components/ThemeBtn";
+import styled from "styled-components";
+import Dynamic from "./components/Dynamic";
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100%;
+`;
+
+const MainDiv = styled.div`
+  width: 100%;
+  height: 500%;
+  position: relative;
+  padding: 20px;
+  @media screen and (max-width: 400px) {
+    padding: 0px 20px;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <MainDiv>
+        <ThemeBtn />
+        <Dynamic />
+      </MainDiv>
+    </Wrapper>
   );
 }
 
