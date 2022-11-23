@@ -1,29 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ThemeBtn from "./components/ThemeBtn";
 import styled from "styled-components";
 import Dynamic from "./components/Dynamic";
+import Home from "./router/Home";
+import Project from "./router/Project";
+import { useScroll, useTransform } from "framer-motion";
+import Router from "./router";
+import { useRecoilState } from "recoil";
+import { YState } from "./atom";
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 200vh;
   width: 100%;
-`;
-
-const MainDiv = styled.div`
-  width: 100%;
-  height: 500%;
   position: relative;
-  padding: 20px;
-  @media screen and (max-width: 400px) {
-    padding: 0px 20px;
-  }
 `;
 
 function App() {
+  const { scrollY } = useScroll();
+  const [Y, SetY] = useRecoilState(YState);
+  useEffect(() => {
+    scrollY.onChange(() => {
+      if (scrollY.get()) {
+        SetY(scrollY.get());
+      }
+    });
+  }, [scrollY]);
   return (
     <Wrapper>
-      <MainDiv>
-        <ThemeBtn />
-        <Dynamic />
-      </MainDiv>
+      <Dynamic />
+      <ThemeBtn />
+      <Home />
+      <Project />
     </Wrapper>
   );
 }

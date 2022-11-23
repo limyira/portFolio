@@ -5,19 +5,21 @@ import { useRecoilState } from "recoil";
 import { ThemeState } from "../atom";
 
 const Btn = styled.div`
-  width: 100px;
-  height: 50px;
+  width: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: sticky;
-  left: 8000px;
-  top: 20px;
-  @media screen and (max-width: 400px) {
+  justify-content: end;
+  position: fixed;
+  top: 2px;
+  z-index: 999;
+  right: 5%;
+  @media screen and (max-width: 430px) {
     width: 76px;
     height: 40px;
-    top: 750px;
+    top: 90%;
+    right: 0%;
   }
+  padding: 20px;
 `;
 const Circle = styled(motion.div)`
   width: 50px;

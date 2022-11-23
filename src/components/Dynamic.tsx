@@ -10,11 +10,13 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: sticky;
+  position: fixed;
   padding: 20px 0px;
   top: 0px;
+  background-color: inherit;
   @media screen and (max-width: 400px) {
   }
+  z-index: 999;
 `;
 interface IBlackBox {
   changebox: boolean;
@@ -240,11 +242,10 @@ const Dynamic = () => {
     <Wrapper>
       <BlackBox changebox={changeBox}>
         <ItemBox>
-          <FirstBox
-            changebox={changeBox}
-            onClick={() => setChangeBox((prev) => !prev)}
-          >
-            <FirstBoxPhoto>photo</FirstBoxPhoto>
+          <FirstBox changebox={changeBox}>
+            <FirstBoxPhoto onClick={() => setChangeBox((prev) => !prev)}>
+              photo
+            </FirstBoxPhoto>
             <AnimatePresence>
               {changeBox && (
                 <FirstBoxDes
@@ -258,7 +259,8 @@ const Dynamic = () => {
                 </FirstBoxDes>
               )}
             </AnimatePresence>
-            <FirstBoxfrequency>
+
+            <FirstBoxfrequency onClick={() => setChangeBox((prev) => !prev)}>
               <Frequency
                 variants={rodVar}
                 initial="initial"
