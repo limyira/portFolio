@@ -7,9 +7,8 @@ const Container = styled.div`
   width: 100%;
 
   height: 100vh;
-  position: sticky;
+  position: fixed;
   background-color: red;
-  top: 1px;
 `;
 
 const Home = () => {

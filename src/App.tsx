@@ -28,8 +28,7 @@ function App() {
     <Wrapper>
       <Dynamic />
       <ThemeBtn />
-      <Home />
-      <Project />
+      <Router />
     </Wrapper>
   );
 }
