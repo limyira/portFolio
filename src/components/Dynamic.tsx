@@ -4,6 +4,7 @@ import { useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
@@ -235,9 +236,20 @@ const Dynamic = () => {
   const [next, setNext] = useState(1);
   const [previous, setPrevious] = useState(next);
   const scaleY = useSpring(0);
+  const nav = useNavigate();
   const input = [0];
   const output = [1];
-
+  useEffect(() => {
+    if (next === 1) {
+      nav("/");
+    } else if (next === 2) {
+      nav("/project");
+    } else if (next === 3) {
+      nav("/resume");
+    } else if (next === 4) {
+      nav("/footer");
+    }
+  }, [next]);
   return (
     <Wrapper>
       <BlackBox changebox={changeBox}>
