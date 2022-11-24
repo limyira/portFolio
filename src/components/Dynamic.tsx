@@ -1,10 +1,17 @@
 import styled from "styled-components";
-import { AnimatePresence, motion, useMotionValue } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useScroll,
+} from "framer-motion";
 import { useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { HeightState, pageNumber, YState } from "../atom";
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
@@ -230,26 +237,56 @@ const rodVar6 = {
     transition: { repeat: Infinity, duration: "1" },
   },
 };
+
+const TitleName = {
+  1: "Home",
+  2: "Resume",
+  3: "Project",
+  4: "Footer",
+};
 const Dynamic = () => {
   const [changeBox, setChangeBox] = useState(false);
-
-  const [next, setNext] = useState(1);
-  const [previous, setPrevious] = useState(next);
-  const scaleY = useSpring(0);
-  const nav = useNavigate();
-  const input = [0];
-  const output = [1];
-  useEffect(() => {
-    if (next === 1) {
-      nav("/");
-    } else if (next === 2) {
-      nav("/project");
-    } else if (next === 3) {
-      nav("/resume");
-    } else if (next === 4) {
-      nav("/footer");
+  const [offsetY, setOffsetY] = useRecoilState(YState);
+  const [next, setNext] = useRecoilState(pageNumber);
+  const [innerHeight, setInnerHeight] = useRecoilState(HeightState);
+  const maxHeight = innerHeight * 4;
+  const increasePage = () => {
+    if (next === 4) {
+      return;
     }
-  }, [next]);
+    if (next !== 4) {
+      setNext((prev: number) => prev + 1);
+      window.scrollTo({
+        top: innerHeight * next,
+        behavior: "smooth",
+      });
+    }
+  };
+  const decreasePage = () => {
+    if (next !== 1) {
+      setNext((prev: number) => prev - 1);
+      window.scrollTo({
+        top: innerHeight * (next - 1) - innerHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      window.open("/", "_self");
+    };
+    if (offsetY < innerHeight && offsetY >= 0) {
+      setNext(1);
+    } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+      setNext(2);
+    } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
+      setNext(3);
+    } else {
+      setNext(4);
+    }
+  }, [offsetY]);
+
   return (
     <Wrapper>
       <BlackBox changebox={changeBox}>
@@ -336,22 +373,10 @@ const Dynamic = () => {
                 <ForwardBox>
                   <NotExists onClick={() => setChangeBox((prev) => !prev)} />
                   <ArrowBox>
-                    <div
-                      onClick={() => {
-                        if (next !== 1) {
-                          setNext((prev) => prev - 1);
-                        }
-                      }}
-                    >
+                    <div onClick={decreasePage}>
                       <FontAwesomeIcon icon={faCaretLeft} />
                     </div>
-                    <div
-                      onClick={() => {
-                        if (next !== 4) {
-                          setNext((prev) => prev + 1);
-                        }
-                      }}
-                    >
+                    <div onClick={increasePage}>
                       <FontAwesomeIcon icon={faCaretRight} />
                     </div>
                   </ArrowBox>

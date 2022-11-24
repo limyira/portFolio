@@ -183,7 +183,6 @@ const Home = () => {
   useEffect(() => {
     setBoxHeight(homeRef.current?.clientHeight!);
   }, []);
-  console.log(window.innerWidth);
   return (
     <Container ref={homeRef}>
       <InnerContainer>
@@ -234,10 +233,7 @@ const Home = () => {
             </H1InnerBoxWrapper>
           </InnerBoxWrapper>
         </H1Box>
-        <ImagesBox>
-          {/* <Images1 width="600px" height="600px" /> */}
-          {/* <SVGComponent width="800px" height="800px" /> */}
-        </ImagesBox>
+        <ImagesBox></ImagesBox>
       </InnerContainer>
     </Container>
   );

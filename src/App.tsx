@@ -7,14 +7,14 @@ import Project from "./router/Project";
 import { useScroll, useTransform } from "framer-motion";
 import Router from "./Router";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { ThemeState, YState } from "./atom";
+import { HeightState, ThemeState, YState } from "./atom";
 import Resume from "./router/Resume";
 import Footer from "./router/Footer";
 import { lightTheme, darkTheme } from "./theme";
 import Face from "./images/face";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
-  height: 600vh;
+  height: 400vh;
   width: 100%;
   position: relative;
 `;
@@ -31,16 +31,31 @@ const FaceBox = styled.div`
   }
 `;
 function App() {
-  const { scrollY } = useScroll();
   const isDark = useRecoilValue(ThemeState);
+  const [offsetY, setOffsetY] = useRecoilState(YState);
+  const { scrollY } = useScroll();
+  const [innerHeight, setInneHeight] = useRecoilState(HeightState);
+  const clickHome = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    setInneHeight(window.innerHeight);
+    scrollY.onChange(() => {
+      setOffsetY(scrollY.get());
+    });
+  }, [scrollY]);
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <Wrapper>
-        <FaceBox>
+        <FaceBox onClick={clickHome}>
           <Face />
         </FaceBox>
+        <Dynamic />
         <ThemeBtn />
-        <Router />
+        <Home />
         <Project />
         <Resume />
         <Footer />

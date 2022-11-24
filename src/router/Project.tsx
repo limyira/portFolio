@@ -15,30 +15,9 @@ const Container = styled(motion.div)`
   position: sticky;
   top: 0px;
 `;
-// const slideVar = {
-//   initial: (Y: IContainer) => ({
-//     top: "500px",
-//   }),
-//   animate: (Y: IContainer) => ({
-//     top: `500 - ${Y}`,
-//   }),
-// };
+
 const Project = () => {
-  const Y = useRecoilValue(YState);
-  const clientHeight = useRecoilValue(BoxHeight);
-  const changeHeight = clientHeight - Y + 1;
-  useEffect(() => {}, [Y]);
-  console.log(changeHeight);
-  return (
-    <Container
-    // custom={Y}
-    // variants={slideVar}
-    // initial="initial"
-    // animate="animate"
-    >
-      Project
-    </Container>
-  );
+  return <Container>Project</Container>;
 };
 
 export default Project;
