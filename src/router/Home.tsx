@@ -6,7 +6,7 @@ import { BoxHeight } from "../atom";
 const Container = styled.div`
   width: 100%;
   position: sticky;
-  height: 955px;
+  height: 100vh;
   background-color: red;
   z-index: 1;
   top: 0px;

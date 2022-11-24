@@ -9,7 +9,7 @@ interface IContainer {
 }
 const Container = styled(motion.div)`
   width: 100%;
-  height: 955px;
+  height: 100vh;
   background-color: yellow;
   z-index: 3;
   position: sticky;
