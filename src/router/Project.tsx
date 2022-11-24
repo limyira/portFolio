@@ -5,35 +5,36 @@ import { BoxHeight, YState } from "../atom";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 interface IContainer {
-  changeHeight: number;
+  Y: number;
 }
 const Container = styled(motion.div)`
   width: 100%;
-  height: 100vh;
-  position: absolute;
+  height: 955px;
   background-color: yellow;
-  z-index: 2;
-  top: 100vh;
+  z-index: 3;
+  position: sticky;
+  top: 0px;
 `;
-const slideVar = {
-  initial: (changeHeight: IContainer) => ({
-    top: "955px",
-  }),
-  animate: (changeHeight: IContainer) => ({
-    top: changeHeight,
-  }),
-};
+// const slideVar = {
+//   initial: (Y: IContainer) => ({
+//     top: "500px",
+//   }),
+//   animate: (Y: IContainer) => ({
+//     top: `500 - ${Y}`,
+//   }),
+// };
 const Project = () => {
   const Y = useRecoilValue(YState);
   const clientHeight = useRecoilValue(BoxHeight);
   const changeHeight = clientHeight - Y + 1;
   useEffect(() => {}, [Y]);
+  console.log(changeHeight);
   return (
     <Container
-    //   custom={changeHeight}
-    //   variants={slideVar}
-    //   initial="initial"
-    //   animate="animate"
+    // custom={Y}
+    // variants={slideVar}
+    // initial="initial"
+    // animate="animate"
     >
       Project
     </Container>

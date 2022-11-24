@@ -8,8 +8,10 @@ import { useScroll, useTransform } from "framer-motion";
 import Router from "./router";
 import { useRecoilState } from "recoil";
 import { YState } from "./atom";
+import Resume from "./router/Resume";
+import Footer from "./router/Footer";
 const Wrapper = styled.div`
-  height: 200vh;
+  height: 400vh;
   width: 100%;
   position: relative;
 `;
@@ -28,7 +30,10 @@ function App() {
     <Wrapper>
       <Dynamic />
       <ThemeBtn />
-      <Router />
+      <Home />
+      <Project />
+      <Resume />
+      <Footer />
     </Wrapper>
   );
 }

@@ -5,10 +5,11 @@ import { useRecoilState } from "recoil";
 import { BoxHeight } from "../atom";
 const Container = styled.div`
   width: 100%;
-
-  height: 100vh;
-  position: fixed;
+  position: sticky;
+  height: 955px;
   background-color: red;
+  z-index: 1;
+  top: 0px;
 `;
 
 const Home = () => {
