@@ -273,9 +273,9 @@ const Dynamic = () => {
   };
 
   useEffect(() => {
-    window.onbeforeunload = () => {
-      window.open("/", "_self");
-    };
+    if (offsetY === 0) {
+      return;
+    }
     if (offsetY < innerHeight && offsetY >= 0) {
       setNext(1);
     } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
@@ -286,7 +286,6 @@ const Dynamic = () => {
       setNext(4);
     }
   }, [offsetY]);
-
   return (
     <Wrapper>
       <BlackBox changebox={changeBox}>
