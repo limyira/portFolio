@@ -50,8 +50,20 @@ const TagBox = styled.div`
     width: 90%;
     font-size: 0.8rem;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
-    width: 70%;
+  @media screen and (max-width: 385px) {
+    font-size: 0.5rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 390px) and (max-width: 420px) {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 421px) and (max-width: 799px) {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    width: 90%;
     font-size: 0.9rem;
   }
 `;
@@ -64,6 +76,9 @@ const Tag = styled.div`
   span {
     margin-left: 6px;
     color: ${(props) => props.theme.tagColor};
+  }
+  @media screen and (min-width: 401px) and (max-width: 1200px) {
+    height: 80%;
   }
 `;
 const Pwd = styled.div`
@@ -79,13 +94,25 @@ const Pwd = styled.div`
   span {
     margin-left: 6px;
   }
-
   @media screen and (max-width: 400px) {
     width: 90%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
-    width: 70%;
+  @media screen and (max-width: 385px) {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 390px) and (max-width: 420px) {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 421px) and (max-width: 799px) {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    width: 90%;
     font-size: 0.9rem;
   }
 `;
@@ -111,11 +138,25 @@ const H1 = styled.h1`
   margin-bottom: 15px;
   color: ${(props) => props.theme.textColor};
   @media screen and (max-width: 400px) {
+    width: 90%;
     font-size: 1rem;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
-    width: 70%;
-    font-size: 1.8rem;
+  @media screen and (max-width: 385px) {
+    width: 90%;
+    font-size: 1rem;
+  }
+  @media screen and (min-width: 390px) and (max-width: 420px) {
+    width: 90%;
+    font-size: 1rem;
+  }
+  @media screen and (min-width: 421px) and (max-width: 799px) {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    width: 90%;
+    font-size: 1.6rem;
   }
 `;
 const Span = styled.span`
@@ -128,10 +169,20 @@ const Des = styled.p`
   color: ${(props) => props.theme.remarkColor};
   margin-bottom: 3px;
   @media screen and (max-width: 400px) {
-    font-size: 0.5rem;
+    font-size: 0.3rem;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
-    font-size: 0.8rem;
+  @media screen and (max-width: 385px) {
+    font-size: 0.3rem;
+  }
+  @media screen and (min-width: 390px) and (max-width: 420px) {
+    font-size: 0.6rem;
+  }
+  @media screen and (min-width: 421px) and (max-width: 799px) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    font-size: 1.2rem;
   }
 `;
 const ImagesBox = styled.div`
@@ -158,15 +209,25 @@ const H1InnerBoxWrapper = styled.div`
   display: flex;
   color: ${(props) => props.theme.remarkColor};
   padding: 6px;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 385px) {
+    font-size: 0.5rem;
+    width: 90%;
+    height: 54%;
+  }
+  @media screen and (min-width: 390px) and (max-width: 420px) {
     font-size: 0.5rem;
     width: 90%;
     height: 42%;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
+  @media screen and (min-width: 421px) and (max-width: 799px) {
     font-size: 0.8rem;
-    width: 70%;
-    height: 62%;
+    width: 90%;
+    height: 41%;
+  }
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    font-size: 1rem;
+    width: 90%;
+    height: 60%;
   }
 `;
 const NumberBox = styled.div`
