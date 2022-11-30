@@ -16,28 +16,30 @@ const Container = styled(motion.div)`
   background-color: white;
   position: sticky;
   top: 0px;
-  background-color: yellow;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 `;
 
 const BoardWrapper = styled.div`
   width: 100%;
-  height: 60%;
+  height: 70%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: green;
+  align-items: center;
 `;
 const Board = styled.div`
-  width: 60%;
-  height: 100%;
+  width: 70%;
+  height: fit-content;
+`;
+const H1Box = styled.div`
+  width: 100%;
+  height: 30%;
   background-color: red;
 `;
 const Project = () => {
   return (
     <Container>
+      <H1Box>hello</H1Box>
       <BoardWrapper>
         <Board>
           <Card />
