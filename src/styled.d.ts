@@ -11,6 +11,8 @@ declare module "styled-components" {
     tagColor: string;
     bgColor1: string;
     bgColor2: string;
+    bgTitle2: string;
+    bgBoard: string;
     bgColor3: string;
     bgColor4: string;
     accentColor: string;

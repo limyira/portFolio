@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 
 const Carousel = styled(motion.div)`
   cursor: grab;
-  background-color: lightblue;
-  padding: 20px;
+  background-color: inherit;
+  padding: 40px;
   overflow: hidden;
 `;
 
@@ -16,7 +16,7 @@ const InnerCarousel = styled(motion.div)`
 `;
 
 const Item = styled(motion.div)`
-  min-height: 28rem;
+  min-height: 35rem;
   min-width: 20rem;
 
   position: relative;
@@ -45,10 +45,9 @@ const ItemCard = styled(motion.div)`
 `;
 const Image = styled.div`
   width: 100;
-  height: 80%;
+  height: 100%;
   background-color: black;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-radius: 2rem;
   color: white;
   background-image: url("https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-position: center;
@@ -58,32 +57,41 @@ const Image = styled.div`
 const LinkBox = styled.div`
   width: 100%;
   height: 20%;
-  background-color: red;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: ${(props) => props.theme.bgBoard};
 `;
 
 const LeftLink = styled.div`
   width: 50%;
   height: 100%;
-  background-color: yellow;
   border-bottom-left-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
+  border-right: 1px solid rgba(0, 0, 0, 0.6);
+
+  :hover {
+    color: ${(props) => props.theme.accentColor};
+  }
 `;
 
 const RightLink = styled.div`
   width: 50%;
   height: 100%;
-  background-color: green;
   border-bottom-right-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
+  :hover {
+    color: ${(props) => props.theme.accentColor};
+  }
 `;
 const Front = styled(motion.div)`
   width: 100%;
@@ -91,7 +99,8 @@ const Front = styled(motion.div)`
   position: absolute;
 `;
 const Back = styled(motion.div)`
-  background-color: beige;
+  background-color: ${(props) => props.theme.bgBoard};
+  color: ${(props) => props.theme.textColor};
   width: 100%;
   height: 100%;
   position: absolute;
@@ -100,17 +109,31 @@ const Back = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
-// const cardVar = {
-//   initial: {
-//     y: 0,
-//   },
-//   animate: {
-//     rotateY: 180,
-//     transition: { duration: 1.5 },
-//   },
-// };
+const InnerBack = styled.div`
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+`;
+const SkillBox = styled.div`
+  width: 100%;
+  height: 20%;
+  padding: 1rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: ${(props) => props.theme.bgBoard};
+`;
+
+const Des = styled.div`
+  width: 100%;
+  height: 80%;
+  background-color: ${(props) => props.theme.bgBoard};
+`;
 const Card = () => {
   const [boardWidth, setBoardWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
@@ -128,13 +151,22 @@ const Card = () => {
           <Item>
             <ItemCard>
               <Front>
-                <Image>hello</Image>
-                <LinkBox>
-                  <LeftLink>Github</LeftLink>
-                  <RightLink>Goto Site</RightLink>
-                </LinkBox>
+                <Image />
               </Front>
-              <Back>설명적을공간.</Back>
+              <Back>
+                <InnerBack>
+                  <SkillBox>스킬이 들어갈공간입니다.</SkillBox>
+                  <Des>내용이들어갈공간입니다.</Des>
+                </InnerBack>
+                <LinkBox>
+                  <LeftLink onClick={() => console.log("left")}>
+                    Github
+                  </LeftLink>
+                  <RightLink onClick={() => console.log("right")}>
+                    Homepage
+                  </RightLink>
+                </LinkBox>
+              </Back>
             </ItemCard>
           </Item>
         ))}

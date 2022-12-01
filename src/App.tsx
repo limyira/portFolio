@@ -7,7 +7,7 @@ import Project from "./router/Project";
 import { useScroll, useTransform } from "framer-motion";
 import Router from "./Router";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { HeightState, ThemeState, YState } from "./atom";
+import { HeightState, pageNumber, ThemeState, YState } from "./atom";
 import Resume from "./router/Resume";
 import Footer from "./router/Footer";
 import { lightTheme, darkTheme } from "./theme";
@@ -35,6 +35,7 @@ function App() {
   const [offsetY, setOffsetY] = useRecoilState(YState);
   const { scrollY } = useScroll();
   const [innerHeight, setInneHeight] = useRecoilState(HeightState);
+  const [page, setPage] = useRecoilState(pageNumber);
   const clickHome = () => {
     window.scrollTo({
       top: 0,
@@ -46,6 +47,10 @@ function App() {
     scrollY.onChange(() => {
       setOffsetY(scrollY.get());
     });
+    window.onbeforeunload = () => {
+      setPage(1);
+      window.scrollTo(0, 0);
+    };
   }, [scrollY]);
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>

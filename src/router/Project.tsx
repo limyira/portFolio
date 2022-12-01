@@ -13,11 +13,12 @@ const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
   z-index: 3;
-  background-color: white;
+  background-color: ${(props) => props.theme.bgColor2};
   position: sticky;
   top: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 const BoardWrapper = styled.div`
@@ -25,23 +26,30 @@ const BoardWrapper = styled.div`
   height: 70%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 `;
 const Board = styled.div`
   width: 70%;
   height: fit-content;
 `;
-const H1Box = styled.div`
-  width: 100%;
-  height: 30%;
-  background-color: red;
+const H1 = styled.div`
+  width: 120px;
+  text-align: center;
+  font-size: 2.3rem;
+  margin-left: 24px;
+  h1 {
+    color: rgba(255, 0, 0, 0.6);
+    font-weight: 600;
+  }
 `;
 const Project = () => {
   return (
     <Container>
-      <H1Box>hello</H1Box>
       <BoardWrapper>
         <Board>
+          <H1>
+            <h1>Project</h1>
+          </H1>
           <Card />
         </Board>
       </BoardWrapper>
