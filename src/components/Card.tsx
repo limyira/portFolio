@@ -39,8 +39,10 @@ const ItemCard = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   transition: all 1s ease-in-out;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   transform-style: preserve-3d;
   -webkit-perspective: 0;
+  visibility: visible;
   -webkit-transition: 1s;
   :hover {
     transform: translate(-50%, -50%) rotateY(180deg);
