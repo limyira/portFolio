@@ -160,7 +160,7 @@ const Card = () => {
               <Back>
                 <InnerBack>
                   <SkillBox>스킬이 들어갈공간입니다.</SkillBox>
-                  <Des>내용이들어갈공간입니다.</Des>
+                  <Des>dotaeng joa.</Des>
                 </InnerBack>
                 <LinkBox>
                   <LeftLink onClick={() => console.log("left")}>
