@@ -21,7 +21,7 @@ const Item = styled(motion.div)`
 
   position: relative;
   margin-right: 20px;
-  @media screen and (min-width: 340px) and (max-width: 700px) {
+  @media screen and (min-width: 340px) and (max-width: 1200px) {
     min-height: 25rem;
     min-width: 15rem;
   }
@@ -40,11 +40,14 @@ const ItemCard = styled(motion.div)`
   transition: all 1s ease-in-out;
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
+  -webkit-perspective: 0;
+  -webkit-transition: 1s;
   :hover {
     transform: translate(-50%, -50%) rotateY(180deg);
   }
   div {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 `;
 const Image = styled.div`
@@ -147,6 +150,7 @@ const Card = () => {
     setBoardWidth(
       carousel.current?.scrollWidth! - carousel.current?.offsetWidth!
     );
+    console.log(window.innerWidth);
   });
   return (
     <Carousel ref={carousel}>

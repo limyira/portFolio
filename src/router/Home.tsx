@@ -92,7 +92,7 @@ const Tag = styled.div`
   }
 
   @media screen and (min-width: 800px) and (max-width: 1200px) {
-    height: 80%;
+    height: 100%;
   }
 `;
 const Pwd = styled.div`
