@@ -21,16 +21,16 @@ const Item = styled(motion.div)`
 
   position: relative;
   margin-right: 20px;
-  @media screen and (min-width: 390px) and (max-width: 700px) {
+  @media screen and (min-width: 370px) and (max-width: 700px) {
     min-height: 25rem;
-    min-width: 10rem;
+    min-width: 15rem;
   }
 `;
 
 const ItemCard = styled(motion.div)`
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   background-color: black;
   width: 100%;
   height: 100%;
