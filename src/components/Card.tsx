@@ -46,6 +46,7 @@ const ItemCard = styled(motion.div)`
   -webkit-transition: 1s;
   :hover {
     transform: translate(-50%, -50%) rotateY(180deg);
+    -webkit-transform: translate(-50%, -50%) rotateY(180deg);
   }
   div {
     backface-visibility: hidden;
@@ -106,6 +107,12 @@ const Front = styled(motion.div)`
   width: 100%;
   height: 100%;
   position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 const Back = styled(motion.div)`
   background-color: ${(props) => props.theme.bgBoard};
@@ -120,6 +127,12 @@ const Back = styled(motion.div)`
   justify-content: center;
   flex-direction: column;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 const InnerBack = styled.div`
