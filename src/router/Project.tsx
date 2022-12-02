@@ -51,7 +51,9 @@ const Project = () => {
       <BoardWrapper>
         <Board>
           <H1>
-            <h1>Project</h1>
+            <h1>
+              {"<"}ProJect{"/>"}
+            </h1>
           </H1>
           <Card />
         </Board>
