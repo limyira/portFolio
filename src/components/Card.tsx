@@ -48,6 +48,7 @@ const ItemCard = styled(motion.div)`
     transform: translate(-50%, -50%) rotateY(180deg);
     -webkit-transform: translate(-50%, -50%) rotateY(180deg);
   }
+
   div {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
