@@ -37,9 +37,10 @@ const BlackBox = styled(motion.div)<IBlackBox>`
   border-radius: ${(props) => (props.changebox ? "50px" : "24px")};
   transition: 0.5s ease-in-out;
   position: absolute;
-  @media screen and (min-width: 370px) and (max-width: 430px) {
+
+  @media screen and (min-width: 360px) and (max-width: 430px) {
     width: ${(props) => (props.changebox ? "300px" : "230px")};
-    height: ${(props) => (props.changebox ? "180px" : "40px")};
+    height: ${(props) => (props.changebox ? "170px" : "40px")};
     border-radius: ${(props) => (props.changebox ? "50px" : "24px")};
   }
   cursor: pointer;

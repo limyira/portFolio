@@ -46,25 +46,26 @@ const TagBox = styled.div`
   width: 50%;
   height: 12%;
   background-color: ${(props) => props.theme.consoleBgColor};
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 369px) {
     width: 90%;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
-  @media screen and (max-width: 385px) {
-    font-size: 0.5rem;
-    width: 90%;
-  }
-  @media screen and (min-width: 390px) and (max-width: 420px) {
+
+  @media screen and (min-width: 370px) and (max-width: 389px) {
     font-size: 0.7rem;
     width: 90%;
   }
-  @media screen and (min-width: 421px) and (max-width: 799px) {
-    font-size: 0.8rem;
+  @media screen and (min-width: 390px) and (max-width: 430px) {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+  @media screen and (min-width: 431px) and (max-width: 799px) {
+    font-size: 0.9rem;
     width: 90%;
   }
   @media screen and (min-width: 800px) and (max-width: 1200px) {
     width: 90%;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 `;
 const Tag = styled.div`
@@ -77,7 +78,20 @@ const Tag = styled.div`
     margin-left: 6px;
     color: ${(props) => props.theme.tagColor};
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
+  @media screen and (max-width: 369px) {
+    height: 80%;
+  }
+  @media screen and (min-width: 370px) and (max-width: 389px) {
+    height: 80%;
+  }
+  @media screen and (min-width: 390px) and (max-width: 430px) {
+    height: 80%;
+  }
+  @media screen and (min-width: 431px) and (max-width: 799px) {
+    height: 80%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
     height: 80%;
   }
 `;
@@ -94,26 +108,26 @@ const Pwd = styled.div`
   span {
     margin-left: 6px;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 369px) {
     width: 90%;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
-  @media screen and (max-width: 385px) {
+  @media screen and (min-width: 370px) and (max-width: 389px) {
     font-size: 0.7rem;
     width: 90%;
   }
-  @media screen and (min-width: 390px) and (max-width: 420px) {
-    font-size: 0.7rem;
+  @media screen and (min-width: 390px) and (max-width: 430px) {
+    font-size: 0.8rem;
     width: 90%;
   }
-  @media screen and (min-width: 421px) and (max-width: 799px) {
-    font-size: 0.8rem;
+  @media screen and (min-width: 431px) and (max-width: 799px) {
+    font-size: 1.2rem;
     width: 90%;
   }
 
   @media screen and (min-width: 800px) and (max-width: 1200px) {
     width: 90%;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 `;
 const H1InnerBox = styled.div`
@@ -125,18 +139,11 @@ const H1InnerBox = styled.div`
   flex-direction: column;
   background-color: ${(props) => props.theme.consoleBgColor};
   margin: 0 auto;
-  @media screen and (max-width: 400px) {
-    width: 100%;
-    font-size: 1.2rem;
+  @media screen and (max-width: 369px) {
+    width: 80%;
+    font-size: 0.8rem;
   }
-  @media screen and (min-width: 401px) and (max-width: 1200px) {
-    width: 90%;
-  }
-`;
-const H1 = styled.h1`
-  font-size: 2.3rem;
-  margin-bottom: 15px;
-  color: ${(props) => props.theme.textColor};
+
   @media screen and (min-width: 370px) and (max-width: 389px) {
     width: 80%;
     font-size: 1rem;
@@ -156,6 +163,34 @@ const H1 = styled.h1`
     font-size: 1.7rem;
   }
 `;
+const H1 = styled.h1`
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+  color: ${(props) => props.theme.textColor};
+  @media screen and (max-width: 369px) {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  @media screen and (min-width: 370px) and (max-width: 389px) {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 390px) and (max-width: 430px) {
+    width: 90%;
+    font-size: 1.1rem;
+  }
+  @media screen and (min-width: 431px) and (max-width: 799px) {
+    font-size: 1.6rem;
+    width: 90%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+    width: 100%;
+    font-size: 1.9rem;
+  }
+`;
 const Span = styled.span`
   color: ${(props) => props.theme.consoleAcColor};
 `;
@@ -165,6 +200,9 @@ const Span2 = styled.span`
 const Des = styled.p`
   color: ${(props) => props.theme.remarkColor};
   margin-bottom: 3px;
+  @media screen and (max-width: 369px) {
+    font-size: 7px;
+  }
   @media screen and (min-width: 370px) and (max-width: 389px) {
     font-size: 0.5rem;
   }
@@ -177,7 +215,7 @@ const Des = styled.p`
   }
 
   @media screen and (min-width: 800px) and (max-width: 1200px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 const ImagesBox = styled.div`
@@ -204,11 +242,15 @@ const H1InnerBoxWrapper = styled.div`
   display: flex;
   color: ${(props) => props.theme.remarkColor};
   padding: 6px;
-
+  @media screen and (max-width: 369px) {
+    font-size: 0.3rem;
+    width: 90%;
+    height: 50%;
+  }
   @media screen and (min-width: 370px) and (max-width: 430px) {
     font-size: 0.5rem;
     width: 90%;
-    height: 36%;
+    height: 41%;
   }
   @media screen and (min-width: 431px) and (max-width: 799px) {
     font-size: 1rem;
