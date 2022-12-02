@@ -31,16 +31,15 @@ const ItemCard = styled(motion.div)`
   position: absolute;
   top: 50%;
   left: 40%;
-  background-color: black;
   width: 100%;
   height: 100%;
   border-radius: 2rem;
-  background-color: white;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   transition: all 1s ease-in-out;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   -webkit-perspective: 0;
   visibility: visible;
   -webkit-transition: 1s;
@@ -57,7 +56,6 @@ const ItemCard = styled(motion.div)`
 const Image = styled.div`
   width: 100;
   height: 100%;
-  background-color: black;
   border-radius: 2rem;
   color: white;
   background-image: url("https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
