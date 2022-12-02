@@ -31,6 +31,9 @@ const BoardWrapper = styled.div`
 const Board = styled.div`
   width: 70%;
   height: fit-content;
+  @media screen and (min-width: 390px) and (max-width: 700px) {
+    width: 80%;
+  }
 `;
 const H1 = styled.div`
   width: 120px;
