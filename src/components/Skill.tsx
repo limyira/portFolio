@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 const CardBox = styled.div`
   width: 100%;
-  height: 80%;
+  height: 90%;
+  @media screen and (max-width: 480px) {
+    height: 90%;
+  }
 `;
 const InnerCardBox = styled.div`
   width: 80%;
@@ -193,7 +196,7 @@ const Skill = () => {
               whileHover="animate"
             >
               <CardName style={{ fontSize: "1.6rem" }}>Mark Up</CardName>
-              <CardDes style={{ height: "90%" }}>
+              <CardDes>
                 <ItemBox style={{ height: "30%" }}>
                   <Item
                     style={{
@@ -261,13 +264,13 @@ const Skill = () => {
                 initial="initial"
                 whileHover="animate"
               >
-                <CardName>DataBase</CardName>
+                <CardName>Tool</CardName>
                 <CardDes style={{ height: "80%" }}>
                   <ItemBox>
                     <Item
                       style={{
                         backgroundImage:
-                          "url('https://assets.stickpng.com/images/62a6360f03a870b920cbfd41.png')",
+                          "url('https://cdn.iconscout.com/icon/free/png-256/git-1-226092.png')",
                       }}
                     />
                     <Item
@@ -284,7 +287,7 @@ const Skill = () => {
                 initial="initial"
                 whileHover="animate"
               >
-                <CardName>DataBase</CardName>
+                <CardName>Deployment</CardName>
                 <CardDes style={{ height: "80%" }}>
                   <ItemBox>
                     <Item
