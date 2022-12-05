@@ -275,17 +275,32 @@ const Dynamic = () => {
   };
 
   useEffect(() => {
-    if (offsetY === 0) {
-      return;
-    }
-    if (offsetY < innerHeight && offsetY >= 0) {
-      setNext(1);
-    } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
-      setNext(2);
-    } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
-      setNext(3);
+    if (window.innerWidth <= 500) {
+      if (offsetY === 0) {
+        return;
+      }
+      if (offsetY < innerHeight && offsetY >= 0) {
+        setNext(1);
+      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+        setNext(2);
+      } else if (offsetY < innerHeight * 5 - 2 && offsetY >= innerHeight * 2) {
+        setNext(3);
+      } else {
+        setNext(4);
+      }
     } else {
-      setNext(4);
+      if (offsetY === 0) {
+        return;
+      }
+      if (offsetY < innerHeight && offsetY >= 0) {
+        setNext(1);
+      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+        setNext(2);
+      } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
+        setNext(3);
+      } else {
+        setNext(4);
+      }
     }
   }, [offsetY]);
   return (

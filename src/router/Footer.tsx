@@ -4,9 +4,9 @@ const Container = styled.div`
   width: 100%;
   position: sticky;
   height: 100vh;
-  background-color: red;
   top: 0px;
-  z-index: 5;
+  z-index: 4;
+  background-color: inherit;
 `;
 
 const Footer = () => {

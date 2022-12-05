@@ -11,7 +11,7 @@ export const darkTheme: DefaultTheme = {
   bgColor2: "#000000",
   bgBoard: "#34373C",
   bgTitle2: "#2F7FB6",
-  bgColor3: "#505052",
+  bgColor3: "#30336b",
 
   bgColor4: "#efefef",
   textColor: "white",
@@ -29,7 +29,7 @@ export const lightTheme: DefaultTheme = {
   bgColor2: "#f8f8f8",
   bgBoard: "white",
   bgTitle2: "black",
-  bgColor3: "#efefef",
+  bgColor3: "#7ed6df",
   bgColor4: "#efefef",
   textColor: "black",
   accentColor: "#3498db",
