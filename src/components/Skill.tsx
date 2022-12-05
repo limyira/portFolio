@@ -13,7 +13,6 @@ const InnerCardBox = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 2rem;
-  background-color: red;
 `;
 
 const Top = styled.div`
@@ -250,7 +249,7 @@ const Skill = () => {
               >
                 <CardName>DataBase</CardName>
                 <CardDes style={{ height: "80%" }}>
-                  <ItemBox>
+                  <ItemBox style={{ height: "60%" }}>
                     <Item
                       style={{
                         backgroundImage:
