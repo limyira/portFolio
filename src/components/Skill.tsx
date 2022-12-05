@@ -13,6 +13,7 @@ const InnerCardBox = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 2rem;
+  background-color: red;
 `;
 
 const Top = styled.div`
@@ -36,6 +37,9 @@ const FirstCard = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   height: 240px;
   margin-bottom: 20px;
+  @media screen and (max-width: 480px) {
+    margin: 20px auto;
+  }
 `;
 const SecondCard = styled(motion.div)`
   margin-right: 20px;
@@ -46,6 +50,9 @@ const SecondCard = styled(motion.div)`
   padding: 10px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+  @media screen and (max-width: 480px) {
+    margin: 20px auto;
+  }
 `;
 const ThirdCard = styled(motion.div)`
   height: 560px;
