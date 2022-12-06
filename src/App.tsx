@@ -11,7 +11,7 @@ import { HeightState, pageNumber, ThemeState, YState } from "./atom";
 import Resume from "./router/Resume";
 import Footer from "./router/Footer";
 import { lightTheme, darkTheme } from "./theme";
-import Face from "./images/face";
+import Face from "./public/face";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   height: 400vh;
