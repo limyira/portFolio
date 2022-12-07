@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Container = styled(motion.div)`
   width: 100%;
-  height: 600vh;
+  height: 500vh;
   z-index: 4;
   background-color: rgb(83, 88, 81);
   position: absolute;
@@ -19,10 +19,28 @@ const Container = styled(motion.div)`
 const InnerContainer = styled.div`
   width: 100%;
   height: 100%;
+  position: relative;
+`;
+const TextBox = styled.div`
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+`;
+const Text = styled.div`
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  @media screen and (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const overVar = {
@@ -31,9 +49,11 @@ const overVar = {
   },
   animate: {
     opacity: 1,
+    transition: { duration: 0.5 },
   },
   exit: {
     opacity: 0,
+    transition: { duration: 0.5 },
   },
 };
 
@@ -43,10 +63,18 @@ const Thanks = () => {
   const y = useRecoilState(YState);
   useEffect(() => {
     scrollY.onChange(() => {
-      if (scrollY.get() >= window.innerHeight * 3.5) {
-        setShow(true);
+      if (window.innerWidth < 500) {
+        if (scrollY.get() >= window.innerHeight * 5.5) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
       } else {
-        setShow(false);
+        if (scrollY.get() >= window.innerHeight * 3.5) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
       }
     });
   }, []);
@@ -60,7 +88,11 @@ const Thanks = () => {
           animate="animate"
           exit="exit"
         >
-          <InnerContainer></InnerContainer>
+          <InnerContainer>
+            <TextBox>
+              <Text>Thanks For Watching PortFolio</Text>
+            </TextBox>
+          </InnerContainer>
         </Container>
       )}
     </AnimatePresence>
