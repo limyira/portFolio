@@ -5,16 +5,14 @@ import Dynamic from "./components/Dynamic";
 import Home from "./router/Home";
 import Project from "./router/Project";
 import { useScroll, useTransform } from "framer-motion";
-import Router from "./Router";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { HeightState, pageNumber, ThemeState, YState } from "./atom";
 import Resume from "./router/Resume";
 import Footer from "./router/Footer";
 import { lightTheme, darkTheme } from "./theme";
-import Face from "./public/face";
-import { useNavigate } from "react-router-dom";
+import Thanks from "./router/Thanks";
 const Wrapper = styled.div`
-  height: 400vh;
+  height: 500vh;
   width: 100%;
   position: relative;
 `;
@@ -30,6 +28,7 @@ const FaceBox = styled.div`
     display: none;
   }
 `;
+
 function App() {
   const isDark = useRecoilValue(ThemeState);
   const [offsetY, setOffsetY] = useRecoilState(YState);
@@ -55,15 +54,14 @@ function App() {
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <Wrapper>
-        <FaceBox onClick={clickHome}>
-          <Face />
-        </FaceBox>
+        <FaceBox onClick={clickHome}></FaceBox>
         <Dynamic />
         <ThemeBtn />
         <Home />
         <Project />
         <Resume />
         <Footer />
+        <Thanks />
       </Wrapper>
     </ThemeProvider>
   );

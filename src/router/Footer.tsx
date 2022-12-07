@@ -9,11 +9,13 @@ const Container = styled.div`
   height: 100vh;
   top: 0px;
   z-index: 4;
-  background-color: inherit;
   background-color: ${(props) => props.theme.bgColor1};
   display: flex;
   align-items: flex-end;
   color: ${(props) => props.theme.textColor};
+  @media screen and (max-width: 480px) {
+    height: 150vh;
+  }
 `;
 const InnerContainer = styled.div`
   width: 100%;
@@ -25,6 +27,7 @@ const Personal = styled.div`
   margin: 0 auto;
   @media screen and (max-width: 480px) {
     width: 100%;
+    height: 33%;
   }
 `;
 const Photo = styled.div`
@@ -56,7 +59,9 @@ const Left = styled.div`
   width: 50%;
   height: 100%;
   font-size: 1.3rem;
-
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
   div {
     width: 100%;
     height: 50%;
@@ -72,13 +77,16 @@ const Left = styled.div`
 const Right = styled.div`
   width: 50%;
   font-size: 1.3rem;
+  height: 100%;
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
   div {
     width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
     span {
       margin-left: 10px;
     }

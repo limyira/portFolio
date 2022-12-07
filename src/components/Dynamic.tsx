@@ -258,10 +258,17 @@ const Dynamic = () => {
     }
     if (next !== 4) {
       setNext((prev: number) => prev + 1);
-      window.scrollTo({
-        top: innerHeight * next,
-        behavior: "smooth",
-      });
+      if (next === 3 && window.innerWidth <= 500) {
+        window.scrollTo({
+          top: innerHeight * 5,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo({
+          top: innerHeight * next,
+          behavior: "smooth",
+        });
+      }
     }
   };
   const decreasePage = () => {

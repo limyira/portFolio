@@ -163,7 +163,6 @@ const Card = () => {
     setBoardWidth(
       carousel.current?.scrollWidth! - carousel.current?.offsetWidth!
     );
-    console.log(window.innerWidth);
   });
   return (
     <Carousel ref={carousel}>
