@@ -5,7 +5,7 @@ import Project from "./router/Project";
 import Resume from "./router/Resume";
 import Dynamic from "./components/Dynamic";
 import styled from "styled-components";
-import Face from "./public/face";
+import Face from "./images/face";
 
 const FaceBox = styled.div`
   position: fixed;

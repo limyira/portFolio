@@ -11,6 +11,7 @@ import Resume from "./router/Resume";
 import Footer from "./router/Footer";
 import { lightTheme, darkTheme } from "./theme";
 import Thanks from "./router/Thanks";
+import Power from "./images/power.png";
 const Wrapper = styled.div`
   height: 500vh;
   width: 100%;
@@ -19,10 +20,14 @@ const Wrapper = styled.div`
 const FaceBox = styled.div`
   position: fixed;
   left: 10%;
-
-  width: 20px;
-  height: 20px;
+  background-image: url(${Power});
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
   z-index: 999;
+  top: 30px;
+  display: flex;
   cursor: pointer;
   @media screen and (max-width: 500px) {
     display: none;

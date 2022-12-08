@@ -12,7 +12,7 @@ interface IContainer {
 const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
-  z-index: 3;
+  z-index: 2;
   background-color: ${(props) => props.theme.bgColor2};
   position: sticky;
   top: 0px;

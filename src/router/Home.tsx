@@ -3,9 +3,9 @@ import styled from "styled-components";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { BoxHeight } from "../atom";
-import SVGComponent from "../public/SVGComponent";
-import ReactSvg from "../public/Reactsvg";
-import Images1 from "../public/images1";
+import SVGComponent from "../images/SVGComponent";
+import ReactSvg from "../images/Reactsvg";
+import Images1 from "../images/images1";
 const Container = styled.div`
   width: 100%;
   position: sticky;
