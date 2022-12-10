@@ -44,6 +44,9 @@ const H1 = styled.div`
     color: rgba(255, 0, 0, 0.6);
     font-weight: 600;
   }
+  @media screen and (max-width: 480px) {
+    font-size: 1.6rem;
+  }
 `;
 const Project = () => {
   return (

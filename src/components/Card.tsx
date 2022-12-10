@@ -21,8 +21,12 @@ const Item = styled(motion.div)`
 
   position: relative;
   margin-right: 20px;
-  @media screen and (min-width: 340px) and (max-width: 1200px) {
+  @media screen and (min-width: 340px) and (max-width: 480px) {
     min-height: 25rem;
+    min-width: 15rem;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    min-height: 30rem;
     min-width: 15rem;
   }
 `;

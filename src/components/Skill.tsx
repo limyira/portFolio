@@ -13,6 +13,9 @@ const InnerCardBox = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 2rem;
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 95%;
+  }
 `;
 
 const Top = styled.div`
@@ -23,6 +26,8 @@ const Top = styled.div`
   justify-content: center;
   @media screen and (max-width: 480px) {
     flex-direction: column;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
   }
 `;
 
@@ -39,6 +44,9 @@ const FirstCard = styled(motion.div)`
   @media screen and (max-width: 480px) {
     margin: 20px auto;
   }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 200px;
+  }
 `;
 const SecondCard = styled(motion.div)`
   margin-right: 20px;
@@ -51,6 +59,9 @@ const SecondCard = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   @media screen and (max-width: 480px) {
     margin: 20px auto;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 200px;
   }
 `;
 const ThirdCard = styled(motion.div)`
@@ -66,6 +77,9 @@ const ThirdCard = styled(motion.div)`
     width: 300px;
     margin: 20px 0px;
   }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 420px;
+  }
 `;
 const LastCard = styled(motion.div)`
   height: 220px;
@@ -79,6 +93,9 @@ const LastCard = styled(motion.div)`
   @media screen and (max-width: 480px) {
     width: 300px;
   }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 200px;
+  }
 `;
 const CardName = styled.div`
   width: 100%;
@@ -88,6 +105,12 @@ const CardName = styled.div`
   font-size: 2.1rem;
   border-bottom: 3px solid rgba(0, 0, 0, 0.6);
   padding: 30px 0px;
+  @media screen and (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    font-size: 1.6rem;
+  }
 `;
 const CardDes = styled.div`
   width: 100%;

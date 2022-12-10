@@ -19,7 +19,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   color: ${(props) => props.theme.textColor};
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 880px) {
     height: 150vh;
   }
 `;
@@ -42,6 +42,10 @@ const Personal = styled.div`
   @media screen and (max-width: 480px) {
     width: 100%;
     height: 36%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 80%;
+    height: 24%;
   }
 `;
 const Photo = styled.div`
@@ -123,6 +127,12 @@ const Des = styled.div`
   margin: 0 auto;
   @media screen and (max-width: 480px) {
     width: 100%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 80%;
+    height: 24%;
+    margin-top: 20px;
+    font-size: 1rem !important;
   }
 `;
 const InnerInfo = styled.div`
