@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.js": "/portFolio/static/js/main.93ca113c.js",
+    "main.js": "/portFolio/static/js/main.a1248df0.js",
     "static/media/Myface.jpg": "/portFolio/static/media/Myface.4ce6d435a763b97c8caf.jpg",
+    "static/media/carglassMain.png": "/portFolio/static/media/carglassMain.79533f8d1dc0ac3e72f0.png",
     "static/media/earth.png": "/portFolio/static/media/earth.8436503e415251905765.png",
+    "static/media/calcMain.png": "/portFolio/static/media/calcMain.88b1cf8ad1dd567a03c0.png",
+    "static/media/coinMain.png": "/portFolio/static/media/coinMain.89431b9cf7d06f7f914e.png",
+    "static/media/portMain.png": "/portFolio/static/media/portMain.53f871d75698851c77c2.png",
+    "static/media/todoMain.png": "/portFolio/static/media/todoMain.cb70ebb9127a8f9cd908.png",
     "index.html": "/portFolio/index.html",
-    "main.93ca113c.js.map": "/portFolio/static/js/main.93ca113c.js.map"
+    "main.a1248df0.js.map": "/portFolio/static/js/main.a1248df0.js.map"
   },
   "entrypoints": [
-    "static/js/main.93ca113c.js"
+    "static/js/main.a1248df0.js"
   ]
 }
