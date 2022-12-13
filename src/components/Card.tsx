@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import CalcMain from "../images/calcMain.png";
+import CoinMain from "../images/coinMain.png";
+import PortMain from "../images/portMain.png";
+import TodoMain from "../images/todoMain.png";
+import CarglassMain from "../images/carglassMain.png";
+
 const Carousel = styled(motion.div)`
   cursor: grab;
   background-color: inherit;
@@ -61,14 +66,47 @@ const Image = styled.div`
   width: 100;
   height: 100%;
   border-radius: 2rem;
-  background-image: url(${CalcMain});
+  /* background-image: url(${CalcMain});
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat; */
+  /* img {
+    width: 100%;
+    height: 200px;
+  } */
 `;
+const NameTag = styled.div`
+  width: 100%;
+  height: 10%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+`;
+const CloseTag = styled.div`
+  width: 100%;
+  height: 10%;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: end;
+`;
+const ImgBox = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  img {
+    width: 100%;
+    border-radius: 2rem;
 
+    height: 100%;
+  }
+`;
 const LinkBox = styled.div`
   width: 100%;
-  height: 20%;
+  height: 18%;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
   display: flex;
@@ -135,6 +173,10 @@ const Back = styled(motion.div)`
   transition: 0.6s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  font-size: 1.6rem;
+  @media screen and (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const InnerBack = styled.div`
@@ -157,11 +199,56 @@ const Des = styled.div`
   width: 100%;
   height: 80%;
   background-color: ${(props) => props.theme.bgBoard};
+  line-height: 3rem;
+  @media screen and (max-width: 480px) {
+    line-height: 2rem;
+  }
 `;
 const Card = () => {
   const [boardWidth, setBoardWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
-  const array = [1, 2, 3, 4, 5, 6, 7];
+  const array = [
+    {
+      name: "calc",
+      skill: "react",
+      images: CalcMain,
+      des: "시급 계산기, 근로소득세 계산기, 4대보험 계산기로 처음만든 토이 프로젝트이며, react hook을 연습해볼 수 있는 기회였습니다.",
+      site: "https://limyira.github.io/calculator/",
+      github: "https://github.com/limyira/calculator",
+    },
+    {
+      name: "coins",
+      skill: "react",
+      images: CoinMain,
+      des: "recoil로 상태관리, react-query 사용, 코인 가격과 기능을 알 수 있습니다.",
+      site: "https://github.com/limyira/typescript-cointracker",
+      github: "https://github.com/limyira/typescript-cointracker",
+    },
+    {
+      name: "portFoilo",
+      skill: "react",
+      images: PortMain,
+      des: "현재 포트폴리오로 배포되어있는사이트로, 웹사이트에 디자인을 보고 연습하여 만든사이트입니다.",
+      site: "https://github.com/limyira/portFolio",
+      github: "https://github.com/limyira/portFolio",
+    },
+    {
+      name: "todo",
+      skill: "react",
+      images: TodoMain,
+      des: "react-beautiful-dnd 기능으로 드로그앤 드랍이 가능한 투두리스트를 만들었습니다.",
+      site: "https://limyira.github.io/typescript-todo/",
+      github: "git",
+    },
+    {
+      name: "car",
+      skill: "react",
+      images: CarglassMain,
+      des: "로그인기능과 아이엠포트를 연동한 결제기능으로 예약날짜를 잡을 수 있는 사이트입니다. 서버는 express로 구성했으며, heroku로 배포 했고, 프론트는 react를 사용하여 netlify로 배포했습니다.",
+      site: "https://www.carglass-beta.com/",
+      github: "https://github.com/limyira/carglass-beta",
+    },
+  ];
 
   useEffect(() => {
     setBoardWidth(
@@ -172,22 +259,30 @@ const Card = () => {
     <Carousel ref={carousel}>
       <InnerCarousel drag="x" dragConstraints={{ right: 0, left: -boardWidth }}>
         {array.map((i) => (
-          <Item key={i}>
+          <Item key={i.name}>
             <ItemCard>
               <Front>
-                <Image />
+                <Image>
+                  <ImgBox>
+                    <img src={i.images} />
+                  </ImgBox>
+                </Image>
               </Front>
               <Back>
                 <InnerBack>
-                  <SkillBox>스킬이 들어갈공간입니다.</SkillBox>
-                  <Des>dotaeng joa.</Des>
+                  <SkillBox>{i.skill}</SkillBox>
+                  <Des>{i.des}</Des>
                 </InnerBack>
                 <LinkBox>
-                  <LeftLink onClick={() => console.log("left")}>
-                    Github
+                  <LeftLink>
+                    <a href={i.github} target="_blank">
+                      Github
+                    </a>
                   </LeftLink>
-                  <RightLink onClick={() => console.log("right")}>
-                    Homepage
+                  <RightLink>
+                    <a href={i.site} target="_blank">
+                      Site
+                    </a>
                   </RightLink>
                 </LinkBox>
               </Back>

@@ -46,6 +46,7 @@ function App() {
       behavior: "smooth",
     });
   };
+
   useEffect(() => {
     setInneHeight(window.innerHeight);
     scrollY.onChange(() => {
