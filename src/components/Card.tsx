@@ -221,7 +221,7 @@ const Card = () => {
       skill: "react",
       images: CoinMain,
       des: "recoil로 상태관리, react-query 사용, 코인 가격과 기능을 알 수 있습니다.",
-      site: "https://github.com/limyira/typescript-cointracker",
+      site: "https://limyira.github.io/typescript-cointracker/",
       github: "https://github.com/limyira/typescript-cointracker",
     },
     {
@@ -229,7 +229,7 @@ const Card = () => {
       skill: "react",
       images: PortMain,
       des: "현재 포트폴리오로 배포되어있는사이트로, 웹사이트에 디자인을 보고 연습하여 만든사이트입니다.",
-      site: "https://github.com/limyira/portFolio",
+      site: "https://limyira.github.io/portFolio/",
       github: "https://github.com/limyira/portFolio",
     },
     {
@@ -238,7 +238,7 @@ const Card = () => {
       images: TodoMain,
       des: "react-beautiful-dnd 기능으로 드로그앤 드랍이 가능한 투두리스트를 만들었습니다.",
       site: "https://limyira.github.io/typescript-todo/",
-      github: "git",
+      github: "https://github.com/limyira/typescript-todo",
     },
     {
       name: "car",
