@@ -5,21 +5,24 @@ import Skill from "../components/Skill";
 const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
-  z-index: 4;
+  z-index: 3;
   background-color: ${(props) => props.theme.bgColor3};
   position: sticky;
   top: 0px;
   @media screen and (max-width: 480px) {
-    height: 300vh;
+    height: 270vh;
   }
 `;
 const InnerContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
+  @media screen and (max-width: 480px) {
+    height: 260vh;
+  }
 `;
 
 const H1 = styled.div`

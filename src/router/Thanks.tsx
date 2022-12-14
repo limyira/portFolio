@@ -13,7 +13,7 @@ const Container = styled(motion.div)`
   top: 0px;
   z-index: 52;
   @media screen and (max-width: 480px) {
-    height: 700vh;
+    height: 570vh;
   }
 `;
 const InnerContainer = styled.div`
@@ -29,6 +29,9 @@ const TextBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 480px) {
+    height: 18%;
+  }
 `;
 const Text = styled.div`
   width: 100%;
@@ -64,7 +67,7 @@ const Thanks = () => {
   useEffect(() => {
     scrollY.onChange(() => {
       if (window.innerWidth < 500) {
-        if (scrollY.get() >= window.innerHeight * 5.5) {
+        if (scrollY.get() >= window.innerHeight * 4.699) {
           setShow(true);
         } else {
           setShow(false);

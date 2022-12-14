@@ -12,7 +12,7 @@ interface IContainer {
 const Container = styled(motion.div)`
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 4;
   background-color: ${(props) => props.theme.bgColor2};
   position: sticky;
   top: 0px;
@@ -23,10 +23,14 @@ const Container = styled(motion.div)`
 
 const BoardWrapper = styled.div`
   width: 100%;
-  height: 70%;
+  height: 80%;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  @media screen and (max-width: 480px) {
+    align-items: center;
+  }
 `;
 const Board = styled.div`
   width: 70%;

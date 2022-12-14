@@ -260,7 +260,12 @@ const Dynamic = () => {
       setNext((prev: number) => prev + 1);
       if (next === 3 && window.innerWidth <= 500) {
         window.scrollTo({
-          top: innerHeight * 5,
+          top: innerHeight * 5.5,
+          behavior: "smooth",
+        });
+      } else if (next === 2 && window.innerWidth <= 500) {
+        window.scrollTo({
+          top: innerHeight * 2.5,
           behavior: "smooth",
         });
       } else {
@@ -290,7 +295,10 @@ const Dynamic = () => {
         setNext(1);
       } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
         setNext(2);
-      } else if (offsetY < innerHeight * 5 - 2 && offsetY >= innerHeight * 2) {
+      } else if (
+        offsetY < innerHeight * 4.5 - 2 &&
+        offsetY >= innerHeight * 2
+      ) {
         setNext(3);
       } else {
         setNext(4);

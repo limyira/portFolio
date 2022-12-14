@@ -10,7 +10,7 @@ const Container = styled.div`
   position: sticky;
   height: 100vh;
   top: 0px;
-  z-index: 4;
+  z-index: 2;
   background-color: ${(props) => props.theme.bgColor1};
   display: flex;
   align-items: flex-end;
@@ -20,12 +20,12 @@ const Container = styled.div`
   background-size: contain;
   color: ${(props) => props.theme.textColor};
   @media screen and (max-width: 880px) {
-    height: 150vh;
+    height: 100vh;
   }
 `;
 const InnerContainer = styled.div`
   width: 100%;
-  height: 90%;
+  height: 100%;
 `;
 const Personal = styled.div`
   width: 45%;
@@ -35,13 +35,12 @@ const Personal = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   background-color: inherit;
-
   /* background-color: ${(props) => props.theme.bgColor2}; */
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
   @media screen and (max-width: 480px) {
     width: 100%;
-    height: 36%;
+    height: 43%;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 80%;
@@ -70,10 +69,10 @@ const Info = styled.div`
   width: 600px;
   height: 110px;
   padding: 10px;
-  margin: 20px auto;
+  margin: 10px auto;
   @media screen and (max-width: 480px) {
     width: 340px;
-    height: 200px;
+    height: 140px;
   }
 `;
 
@@ -146,7 +145,7 @@ const InnerInfo = styled.div`
 `;
 const H1 = styled.div`
   width: 90%;
-  height: 20%;
+  height: 10%;
   margin: 0 auto;
   display: flex;
   align-items: center;

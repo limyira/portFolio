@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const CardBox = styled.div`
   width: 100%;
-  height: 90%;
+  height: 90vh;
   @media screen and (max-width: 480px) {
-    height: 90%;
+    height: 220vh;
   }
 `;
 const InnerCardBox = styled.div`
@@ -15,6 +15,7 @@ const InnerCardBox = styled.div`
   padding: 2rem;
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 95%;
+    height: 100%;
   }
 `;
 
@@ -60,6 +61,7 @@ const SecondCard = styled(motion.div)`
   @media screen and (max-width: 480px) {
     margin: 20px auto;
   }
+
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 200px;
   }
@@ -127,6 +129,7 @@ const ItemBox = styled.div`
 `;
 const Item = styled.div`
   width: 95%;
+
   height: 100%;
   background-position: center;
   background-size: contain;

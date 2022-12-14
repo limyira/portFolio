@@ -75,24 +75,7 @@ const Image = styled.div`
     height: 200px;
   } */
 `;
-const NameTag = styled.div`
-  width: 100%;
-  height: 10%;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  padding: 1rem;
-  font-size: 1.4rem;
-`;
-const CloseTag = styled.div`
-  width: 100%;
-  height: 10%;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  padding: 1rem;
-  font-size: 1.4rem;
-  display: flex;
-  justify-content: end;
-`;
+
 const ImgBox = styled.div`
   width: 100%;
   height: 100%;
@@ -112,6 +95,9 @@ const LinkBox = styled.div`
   display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.6);
   background-color: ${(props) => props.theme.bgBoard};
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const LeftLink = styled.div`
@@ -173,7 +159,6 @@ const Back = styled(motion.div)`
   transition: 0.6s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  font-size: 1.6rem;
   @media screen and (max-width: 480px) {
     font-size: 1.2rem;
   }
@@ -187,12 +172,48 @@ const InnerBack = styled.div`
 `;
 const SkillBox = styled.div`
   width: 100%;
-  height: 20%;
+  height: 30%;
   padding: 1rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   background-color: ${(props) => props.theme.bgBoard};
+`;
+const SkillArray = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+const SkillItem = styled.div`
+  width: 100%;
+  height: 80%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  div {
+    display: inline-block;
+    height: fit-content;
+    padding: 0.4rem;
+    min-width: fit-content;
+    background-color: #deead9;
+    max-width: fit-content;
+    border-radius: 0.7rem;
+    white-space: nowrap;
+    @media screen and (max-width: 480px) {
+      font-size: 0.5rem;
+    }
+    @media screen and (min-width: 481px) and (max-width: 1200px) {
+      font-size: 0.7rem;
+    }
+  }
+`;
+
+const SkillStack = styled.div`
+  width: 100%;
+  height: 20%;
+  margin-bottom: 12px;
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Des = styled.div`
@@ -200,7 +221,13 @@ const Des = styled.div`
   height: 80%;
   background-color: ${(props) => props.theme.bgBoard};
   line-height: 3rem;
+  padding: 10px;
   @media screen and (max-width: 480px) {
+    line-height: 2rem;
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width: 481px) and (max-width: 1200px) {
+    font-size: 1rem;
     line-height: 2rem;
   }
 `;
@@ -210,43 +237,56 @@ const Card = () => {
   const array = [
     {
       name: "calc",
-      skill: "react",
+      skill: ["typescript", "react", "styled-components"],
       images: CalcMain,
       des: "시급 계산기, 근로소득세 계산기, 4대보험 계산기로 처음만든 토이 프로젝트이며, react hook을 연습해볼 수 있는 기회였습니다.",
       site: "https://limyira.github.io/calculator/",
       github: "https://github.com/limyira/calculator",
+      duration: "10월 1일 ~ 10월 11일",
     },
     {
       name: "coins",
-      skill: "react",
+      skill: ["react", "typescript", "react-query", "recoil"],
       images: CoinMain,
       des: "recoil로 상태관리, react-query 사용, 코인 가격과 기능을 알 수 있습니다.",
       site: "https://limyira.github.io/typescript-cointracker/",
       github: "https://github.com/limyira/typescript-cointracker",
+      duration: "8월 21일 ~ 8월 25일",
     },
     {
       name: "portFoilo",
-      skill: "react",
+      skill: ["react", "typescript", "netlify", "recoil"],
       images: PortMain,
       des: "현재 포트폴리오로 배포되어있는사이트로, 웹사이트에 디자인을 보고 연습하여 만든사이트입니다.",
       site: "https://limyira.github.io/portFolio/",
       github: "https://github.com/limyira/portFolio",
+      duration: "12월 1일 ~ 12월 12일",
     },
     {
       name: "todo",
-      skill: "react",
+      skill: ["react", "typescript", "beautiful-dnd"],
       images: TodoMain,
       des: "react-beautiful-dnd 기능으로 드로그앤 드랍이 가능한 투두리스트를 만들었습니다.",
       site: "https://limyira.github.io/typescript-todo/",
       github: "https://github.com/limyira/typescript-todo",
+      duration: "9월 1일 ~ 9월 5일",
     },
     {
       name: "car",
-      skill: "react",
+      skill: [
+        "react",
+        "recoil",
+        "nodeJs",
+        "mongoDB",
+        "netlify",
+        "heroku",
+        "typescript",
+      ],
       images: CarglassMain,
       des: "로그인기능과 아이엠포트를 연동한 결제기능으로 예약날짜를 잡을 수 있는 사이트입니다. 서버는 express로 구성했으며, heroku로 배포 했고, 프론트는 react를 사용하여 netlify로 배포했습니다.",
       site: "https://www.carglass-beta.com/",
       github: "https://github.com/limyira/carglass-beta",
+      duration: "11월 7일 ~ 11월 30일",
     },
   ];
 
@@ -270,7 +310,44 @@ const Card = () => {
               </Front>
               <Back>
                 <InnerBack>
-                  <SkillBox>{i.skill}</SkillBox>
+                  <SkillBox>
+                    <SkillArray>
+                      <SkillStack>기술스택</SkillStack>
+                      <SkillItem>
+                        {i.skill.map((p) => (
+                          <div
+                            key={p}
+                            style={{
+                              backgroundColor:
+                                p === "react"
+                                  ? "#48dbfb"
+                                  : p === "typescript"
+                                  ? "#54a0ff"
+                                  : p === "heroku"
+                                  ? "#ff9ff3"
+                                  : p === "netlify"
+                                  ? "#00d2d3"
+                                  : p === "recoil"
+                                  ? "#c8d6e5"
+                                  : p === "mongoDB"
+                                  ? "#1dd1a1"
+                                  : p === "react-query"
+                                  ? "#ff6b6b"
+                                  : p === "beautiful-dnd"
+                                  ? "#feca57"
+                                  : p === "nodeJs"
+                                  ? "#576574"
+                                  : p === "styled-components"
+                                  ? "rgba(250, 211, 144, 0.6)"
+                                  : "#ff9ff3",
+                            }}
+                          >
+                            {p}
+                          </div>
+                        ))}
+                      </SkillItem>
+                    </SkillArray>
+                  </SkillBox>
                   <Des>{i.des}</Des>
                 </InnerBack>
                 <LinkBox>

@@ -56,6 +56,9 @@ function App() {
       setPage(1);
       window.scrollTo(0, 0);
     };
+    scrollY.onChange(() => {
+      console.log(scrollY.get());
+    });
   }, [scrollY]);
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
@@ -64,9 +67,11 @@ function App() {
         <Dynamic />
         <ThemeBtn />
         <Home />
-        <Project />
-        <Resume />
         <Footer />
+
+        <Resume />
+        <Project />
+
         <Thanks />
       </Wrapper>
     </ThemeProvider>
