@@ -13,7 +13,10 @@ const Container = styled(motion.div)`
   top: 0px;
   z-index: 52;
   @media screen and (max-width: 480px) {
-    height: 570vh;
+    height: 590vh;
+  }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    height: 520vh;
   }
 `;
 const InnerContainer = styled.div`
@@ -67,7 +70,7 @@ const Thanks = () => {
   useEffect(() => {
     scrollY.onChange(() => {
       if (window.innerWidth < 500) {
-        if (scrollY.get() >= window.innerHeight * 4.699) {
+        if (scrollY.get() >= window.innerHeight * 4.8) {
           setShow(true);
         } else {
           setShow(false);

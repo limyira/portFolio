@@ -44,7 +44,7 @@ const Personal = styled.div`
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 80%;
-    height: 24%;
+    height: 30%;
   }
 `;
 const Photo = styled.div`

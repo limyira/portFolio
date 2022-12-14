@@ -65,6 +65,9 @@ const SecondCard = styled(motion.div)`
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 200px;
   }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    height: 300px;
+  }
 `;
 const ThirdCard = styled(motion.div)`
   height: 560px;
@@ -82,6 +85,9 @@ const ThirdCard = styled(motion.div)`
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 420px;
   }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    height: 500px;
+  }
 `;
 const LastCard = styled(motion.div)`
   height: 220px;
@@ -98,6 +104,9 @@ const LastCard = styled(motion.div)`
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 200px;
   }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    height: 180px;
+  }
 `;
 const CardName = styled.div`
   width: 100%;
@@ -111,7 +120,7 @@ const CardName = styled.div`
     font-size: 1.4rem;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;
 const CardDes = styled.div`
@@ -187,9 +196,7 @@ const Skill = () => {
                 initial="initial"
                 whileHover="animate"
               >
-                <CardName style={{ fontSize: "1.6rem" }}>
-                  FrameWork / Library
-                </CardName>
+                <CardName>FrameWork / Library</CardName>
                 <CardDes>
                   <ItemBox>
                     <Item
@@ -227,7 +234,7 @@ const Skill = () => {
               initial="initial"
               whileHover="animate"
             >
-              <CardName style={{ fontSize: "1.6rem" }}>Mark Up</CardName>
+              <CardName>Mark Up</CardName>
               <CardDes>
                 <ItemBox style={{ height: "30%" }}>
                   <Item

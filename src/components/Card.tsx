@@ -34,6 +34,10 @@ const Item = styled(motion.div)`
     min-height: 30rem;
     min-width: 15rem;
   }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    min-height: 32rem;
+    min-width: 18rem;
+  }
 `;
 
 const ItemCard = styled(motion.div)`

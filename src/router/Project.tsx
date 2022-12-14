@@ -19,6 +19,9 @@ const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-width: 480px) {
+    height: 120vh;
+  }
 `;
 
 const BoardWrapper = styled.div`

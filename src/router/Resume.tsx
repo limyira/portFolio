@@ -21,7 +21,7 @@ const InnerContainer = styled.div`
   justify-content: start;
   flex-direction: column;
   @media screen and (max-width: 480px) {
-    height: 260vh;
+    height: 270vh;
   }
 `;
 
@@ -30,6 +30,16 @@ const H1 = styled.div`
   padding: 50px;
   font-size: 2.3rem;
   color: ${(props) => props.theme.bgTitle2};
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    padding: 0px;
+    margin-top: 160px;
+  }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    height: 60px;
+    margin-top: 60px;
+    padding: 0px;
+    margin-left: 400px;
+  }
 `;
 const Resume = () => {
   return (
