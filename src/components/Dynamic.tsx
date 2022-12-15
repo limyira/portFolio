@@ -270,7 +270,7 @@ const Dynamic = () => {
       setNext((prev: number) => prev + 1);
       if (next === 3 && window.innerWidth <= 379) {
         window.scrollTo({
-          top: innerHeight * 5.1,
+          top: innerHeight * 4.9,
           behavior: "smooth",
         });
       }
@@ -310,14 +310,14 @@ const Dynamic = () => {
       if (offsetY === 0) {
         return;
       }
-      if (offsetY < innerHeight && offsetY >= 0) {
+      if (offsetY < window.innerHeight && offsetY >= 0) {
         setNext(1);
         setPosition("Home");
       } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
         setNext(2);
         setPosition("Resume");
       } else if (
-        offsetY < innerHeight * 5.1 - 2 &&
+        offsetY < innerHeight * 4.9 - 2 &&
         offsetY >= innerHeight * 2
       ) {
         setNext(3);
