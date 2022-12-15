@@ -9,8 +9,11 @@ const Container = styled(motion.div)`
   background-color: ${(props) => props.theme.bgColor3};
   position: sticky;
   top: 0px;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 379px) {
     height: 290vh;
+  }
+  @media screen and (min-width: 380px) and (max-width: 480px) {
+    height: 270vh;
   }
 `;
 const InnerContainer = styled.div`
@@ -20,8 +23,11 @@ const InnerContainer = styled.div`
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 379px) {
     height: 290vh;
+  }
+  @media screen and (min-width: 380px) and (max-width: 480px) {
+    height: 270vh;
   }
 `;
 

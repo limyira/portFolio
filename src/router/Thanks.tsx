@@ -12,7 +12,10 @@ const Container = styled(motion.div)`
   position: absolute;
   top: 0px;
   z-index: 52;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 379px) {
+    height: 610vh;
+  }
+  @media screen and (min-width: 380px) and (max-width: 480px) {
     height: 590vh;
   }
   @media screen and (min-width: 851px) and (max-width: 1400px) {
@@ -69,13 +72,21 @@ const Thanks = () => {
   const y = useRecoilState(YState);
   useEffect(() => {
     scrollY.onChange(() => {
-      if (window.innerWidth < 500) {
+      if (window.innerWidth < 380) {
+        if (scrollY.get() >= window.innerHeight * 5.1) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
+      }
+      if (window.innerWidth < 500 && window.innerWidth >= 380) {
         if (scrollY.get() >= window.innerHeight * 4.8) {
           setShow(true);
         } else {
           setShow(false);
         }
-      } else {
+      }
+      if (window.innerWidth >= 501 && window.innerWidth < 8000) {
         if (scrollY.get() >= window.innerHeight * 3.5) {
           setShow(true);
         } else {
@@ -96,7 +107,7 @@ const Thanks = () => {
         >
           <InnerContainer>
             <TextBox>
-              <Text>Thanks For Watching PortFolio</Text>
+              <Text>Thank You For Watching PortFolio</Text>
             </TextBox>
           </InnerContainer>
         </Container>

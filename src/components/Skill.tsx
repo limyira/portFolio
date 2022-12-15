@@ -40,7 +40,7 @@ const FirstCard = styled(motion.div)`
   padding: 10px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-  height: 240px;
+  height: 200px;
   margin-bottom: 20px;
   @media screen and (max-width: 480px) {
     margin: 20px auto;
@@ -52,7 +52,7 @@ const FirstCard = styled(motion.div)`
 const SecondCard = styled(motion.div)`
   margin-right: 20px;
   width: 300px;
-  height: 340px;
+  height: 300px;
   background-color: white;
   border-radius: 2rem;
   padding: 10px;
@@ -70,7 +70,7 @@ const SecondCard = styled(motion.div)`
   }
 `;
 const ThirdCard = styled(motion.div)`
-  height: 560px;
+  height: 500px;
   width: 380px;
   background-color: white;
   border-radius: 2rem;
@@ -91,7 +91,7 @@ const ThirdCard = styled(motion.div)`
   }
 `;
 const LastCard = styled(motion.div)`
-  height: 220px;
+  height: 180px;
   width: 320px;
   background-color: white;
   border-radius: 2rem;
@@ -114,7 +114,6 @@ const CardName = styled.div`
   height: 45px;
   display: flex;
   align-items: center;
-  font-size: 2.1rem;
   border-bottom: 3px solid rgba(0, 0, 0, 0.6);
   padding: 30px 0px;
   @media screen and (max-width: 480px) {
@@ -122,6 +121,9 @@ const CardName = styled.div`
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     font-size: 1.2rem;
+  }
+  @media screen and (min-width: 851px) {
+    font-size: 1.6rem;
   }
 `;
 const CardDes = styled.div`

@@ -12,9 +12,11 @@ export const darkTheme: DefaultTheme = {
   bgBoard: "#34373C",
   bgTitle2: "#2F7FB6",
   bgColor3: "#30336b",
-
+  resumeBg: "#24334A",
   bgColor4: "#efefef",
   textColor: "white",
+  resumeBo: "#3C4C65",
+
   accentColor: "#3498db",
 };
 
@@ -31,6 +33,8 @@ export const lightTheme: DefaultTheme = {
   bgTitle2: "black",
   bgColor3: "#7ed6df",
   bgColor4: "#efefef",
+  resumeBg: "#FBFBFD",
+  resumeBo: "rgba(200, 200, 200,0.2)",
   textColor: "black",
   accentColor: "#3498db",
 };

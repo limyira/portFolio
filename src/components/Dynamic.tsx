@@ -12,6 +12,8 @@ import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { HeightState, pageNumber, YState } from "../atom";
+import Home from "../images/Home.png";
+import Resume from "../images/Resume.png";
 const Wrapper = styled.div`
   width: 100%;
   height: fit-content;
@@ -74,6 +76,10 @@ const FirstBoxPhoto = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 const FirstBoxDes = styled(motion.div)`
   width: 50%;
@@ -246,24 +252,41 @@ const TitleName = {
   3: "Project",
   4: "Footer",
 };
+const Img = styled.image`
+  object-fit: cover;
+`;
 const Dynamic = () => {
   const [changeBox, setChangeBox] = useState(false);
   const [offsetY, setOffsetY] = useRecoilState(YState);
   const [next, setNext] = useRecoilState(pageNumber);
   const [innerHeight, setInnerHeight] = useRecoilState(HeightState);
   const maxHeight = innerHeight * 4;
+  const [position, setPosition] = useState("Home");
   const increasePage = () => {
     if (next === 4) {
       return;
     }
     if (next !== 4) {
       setNext((prev: number) => prev + 1);
-      if (next === 3 && window.innerWidth <= 500) {
+      if (next === 3 && window.innerWidth <= 379) {
         window.scrollTo({
           top: innerHeight * 4.9,
           behavior: "smooth",
         });
-      } else {
+      }
+      if (next === 3 && window.innerWidth <= 500 && window.innerWidth >= 380) {
+        window.scrollTo({
+          top: innerHeight * 4.7,
+          behavior: "smooth",
+        });
+      }
+      if (next !== 3) {
+        window.scrollTo({
+          top: innerHeight * next,
+          behavior: "smooth",
+        });
+      }
+      if (window.innerWidth >= 700) {
         window.scrollTo({
           top: innerHeight * next,
           behavior: "smooth",
@@ -271,6 +294,7 @@ const Dynamic = () => {
       }
     }
   };
+
   const decreasePage = () => {
     if (next !== 1) {
       setNext((prev: number) => prev - 1);
@@ -282,34 +306,64 @@ const Dynamic = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth < 379) {
       if (offsetY === 0) {
         return;
       }
       if (offsetY < innerHeight && offsetY >= 0) {
         setNext(1);
+        setPosition("Home");
       } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
         setNext(2);
+        setPosition("Resume");
       } else if (
-        offsetY < innerHeight * 4.5 - 2 &&
+        offsetY < innerHeight * 4.9 - 2 &&
         offsetY >= innerHeight * 2
       ) {
         setNext(3);
+        setPosition("Skill");
       } else {
         setNext(4);
+        setPosition("Project");
       }
-    } else {
+    }
+    if (window.innerWidth <= 500 && window.innerWidth >= 380) {
       if (offsetY === 0) {
         return;
       }
       if (offsetY < innerHeight && offsetY >= 0) {
         setNext(1);
-      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+        setPosition("Home");
+      } else if (offsetY < innerHeight * 2 - 2 && offsetY >= innerHeight) {
         setNext(2);
-      } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
+        setPosition("Resume");
+      } else if (
+        offsetY < innerHeight * 4.7 - 2 &&
+        offsetY >= innerHeight * 2
+      ) {
         setNext(3);
+        setPosition("Skill");
       } else {
         setNext(4);
+        setPosition("Project");
+      }
+    }
+    if (window.innerWidth > 500) {
+      if (offsetY === 0) {
+        return;
+      }
+      if (offsetY < innerHeight && offsetY >= 0) {
+        setNext(1);
+        setPosition("Home");
+      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+        setNext(2);
+        setPosition("Resume");
+      } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
+        setNext(3);
+        setPosition("Skill");
+      } else {
+        setNext(4);
+        setPosition("Project");
       }
     }
   }, [offsetY]);
@@ -319,7 +373,7 @@ const Dynamic = () => {
         <ItemBox>
           <FirstBox changebox={changeBox}>
             <FirstBoxPhoto onClick={() => setChangeBox((prev) => !prev)}>
-              photo
+              Photo
             </FirstBoxPhoto>
             <AnimatePresence>
               {changeBox && (
@@ -329,7 +383,7 @@ const Dynamic = () => {
                   initial="initial"
                   animate="animate"
                 >
-                  <FirstDes>Home</FirstDes>
+                  <FirstDes>{position}</FirstDes>
                   <SecondDes>by Limyira</SecondDes>
                 </FirstBoxDes>
               )}

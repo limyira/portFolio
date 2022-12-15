@@ -57,7 +57,7 @@ function App() {
       window.scrollTo(0, 0);
     };
     scrollY.onChange(() => {
-      console.log(scrollY.get());
+      console.log(scrollY.get(), window.innerHeight);
     });
   }, [scrollY]);
   return (

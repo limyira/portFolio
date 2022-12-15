@@ -16,5 +16,7 @@ declare module "styled-components" {
     bgColor3: string;
     bgColor4: string;
     accentColor: string;
+    resumeBg: string;
+    resumeBo: string;
   }
 }

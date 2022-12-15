@@ -11,13 +11,9 @@ const Container = styled.div`
   height: 100vh;
   top: 0px;
   z-index: 2;
-  background-color: ${(props) => props.theme.bgColor1};
+  background-color: ${(props) => props.theme.resumeBg};
   display: flex;
   align-items: flex-end;
-  background-image: url(${Earth});
-  background-position: start;
-  background-repeat: no-repeat;
-  background-size: contain;
   color: ${(props) => props.theme.textColor};
   @media screen and (max-width: 880px) {
     height: 100vh;
@@ -28,29 +24,42 @@ const InnerContainer = styled.div`
   height: 100%;
 `;
 const Personal = styled.div`
-  width: 45%;
+  width: 40%;
   height: 40%;
-  margin: 0 auto;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: inherit;
-  /* background-color: ${(props) => props.theme.bgColor2}; */
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
-  @media screen and (max-width: 480px) {
-    width: 100%;
-    height: 43%;
+  background-color: ${(props) => props.theme.resumeBo};
+  @media screen and (max-width: 379px) {
+    width: 85%;
+    height: 38%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  @media screen and (min-width: 380px) and (max-width: 480px) {
+    width: 85%;
+    height: 40%;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
-    width: 80%;
+    width: 76%;
     height: 30%;
   }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    width: 55%;
+    height: 43%;
+  }
 `;
+
 const Photo = styled.div`
   width: 150px;
   height: 150px;
-  margin: 0 auto;
+  margin: 20px auto;
 
   border-radius: 125px;
   background-image: url(${Myface});
@@ -61,8 +70,13 @@ const Photo = styled.div`
     height: 20px;
   }
   @media screen and (max-width: 480px) {
-    width: 125px;
-    height: 125px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    width: 110px;
+    height: 110px;
   }
 `;
 const Info = styled.div`
@@ -70,9 +84,13 @@ const Info = styled.div`
   height: 110px;
   padding: 10px;
   margin: 10px auto;
+
   @media screen and (max-width: 480px) {
-    width: 340px;
+    width: 280px;
     height: 140px;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    width: 500px;
   }
 `;
 
@@ -80,8 +98,14 @@ const Left = styled.div`
   width: 50%;
   height: 100%;
   font-size: 1.3rem;
+
   @media screen and (max-width: 480px) {
     font-size: 1rem;
+    width: fit-content;
+    height: 50%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    font-size: 1.2rem;
   }
   div {
     width: 100%;
@@ -89,6 +113,9 @@ const Left = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 480px) {
+      height: 60%;
+    }
     span {
       margin-left: 10px;
     }
@@ -99,16 +126,25 @@ const Right = styled.div`
   width: 50%;
   font-size: 1.3rem;
   height: 100%;
+  width: fit-content;
   @media screen and (max-width: 480px) {
     font-size: 1rem;
+    margin-top: 10px;
+    height: 50%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    font-size: 1.2rem;
   }
   div {
     width: 100%;
     height: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-
+    @media screen and (max-width: 480px) {
+      height: 60%;
+    }
     span {
       margin-left: 10px;
     }
@@ -124,12 +160,19 @@ const Des = styled.div`
   width: 50%;
   height: 50%;
   margin: 0 auto;
+
   @media screen and (max-width: 480px) {
     width: 100%;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
-    width: 80%;
-    height: 24%;
+    width: 90%;
+    height: 50%;
+    margin-top: 20px;
+    font-size: 1rem !important;
+  }
+  @media screen and (min-width: 851px) and (max-width: 1400px) {
+    width: 70%;
+    height: 60%;
     margin-top: 20px;
     font-size: 1rem !important;
   }
@@ -144,8 +187,8 @@ const InnerInfo = styled.div`
   }
 `;
 const H1 = styled.div`
-  width: 90%;
-  height: 10%;
+  width: 82%;
+  height: 15%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -153,17 +196,64 @@ const H1 = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   @media screen and (max-width: 480px) {
     font-size: 1.6rem;
+    margin-bottom: 15px;
   }
 `;
 const Contents = styled.div`
   width: 90%;
-  height: 70%;
+  height: 87%;
   margin: 0 auto;
   padding: 1rem;
   line-height: 2rem;
   font-size: 1.2rem;
+  display: flex;
+  justify-content: space-around;
   @media screen and (max-width: 480px) {
     font-size: 1rem;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+  }
+`;
+const ContentItem = styled.div`
+  width: 45%;
+  height: 80%;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  padding: 0.6rem;
+  margin-bottom: 10px;
+  min-height: fit-content;
+  background-color: ${(props) => props.theme.resumeBo};
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 481px) and (max-width: 850px) {
+    height: 70%;
+  }
+`;
+const ContentH1 = styled.div`
+  width: 100%;
+  height: fit-content;
+  padding: 10px 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  @media screen and (max-width: 480px) {
+    font-size: 0.9rem;
+    padding: 5px 2px;
+  }
+`;
+const ContentDes = styled.div`
+  width: 100%;
+  height: fit-content;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    line-height: 1.2rem;
+  }
+  span {
+    color: ${(props) => props.theme.accentColor};
   }
 `;
 const Footer = () => {
@@ -199,11 +289,26 @@ const Footer = () => {
         <Des>
           <H1>Introduce</H1>
           <Contents>
-            시각디자인을 전공하여 유저 경험과 디자인에 민감합니다.
-            <br /> 새로운 기술과 트렌드를 익히고 도전하는 것을 좋아합니다.
-            <br />
-            커뮤니케이션의 중요성을 믿습니다. <br />
-            어제보다 나은 사람이 되는 것을 목표로 하고 끊임없이 공부합니다.
+            <ContentItem>
+              <ContentH1>나의 성격</ContentH1>
+              <ContentDes>
+                <span>역지사지의 자세를 가지고있습니다.</span>
+                <br />
+                사적으로 대인관계에서 타인의 마음을 이해하는데 힘쓰고,
+                공적으로는 개발을 하면서 사용자의 니즈를 반영한 기능을 개발하여
+                개발자로서의 역량을 키우고 있습니다.
+              </ContentDes>
+            </ContentItem>
+            <ContentItem>
+              <ContentH1>나의 포부</ContentH1>
+              <ContentDes>
+                <span>꾸준함이라는 강점 </span>
+                <br />
+                새벽 아르바이트를 3년간 하며 학업 및 자격증 공부를
+                병행하였습니다. 저희 강점을 활용하여 새로운 기술이 쏟아져나오는
+                프론트 세계의 전문가가 되겠습니다.
+              </ContentDes>
+            </ContentItem>
           </Contents>
         </Des>
       </InnerContainer>

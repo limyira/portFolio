@@ -131,10 +131,10 @@ const Pwd = styled.div`
   }
 `;
 const H1InnerBox = styled.div`
-  width: 96%;
+  width: fit-content;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   background-color: ${(props) => props.theme.consoleBgColor};
@@ -314,15 +314,9 @@ const Home = () => {
                   Console.<Span>log</Span>(<Span2>"Hello Developer Yira"</Span2>
                   )
                 </H1>
-                <Des>
-                  //조금씩 오류를 수정하면서 나아가는 개발자 임이라입니다.//
-                </Des>
-                <Des>
-                  //조금씩 오류를 수정하면서 나아가는 개발자 임이라입니다.//
-                </Des>
-                <Des>
-                  //조금씩 오류를 수정하면서 나아가는 개발자 임이라입니다.//
-                </Des>
+                <Des>// 오류를 겪어보지 않은 개발자가 없듯이,</Des>
+                <Des>// 스스로의 가능성을 믿으며</Des>
+                <Des>// 오류를 수정하면서 발전하는 개발자 임이라입니다.</Des>
               </H1InnerBox>
             </H1InnerBoxWrapper>
           </InnerBoxWrapper>
