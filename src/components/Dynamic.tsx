@@ -270,25 +270,25 @@ const Dynamic = () => {
       setNext((prev: number) => prev + 1);
       if (next === 3 && window.innerWidth <= 379) {
         window.scrollTo({
-          top: innerHeight * 4.9,
+          top: window.innerHeight * 4.9,
           behavior: "smooth",
         });
       }
       if (next === 3 && window.innerWidth <= 500 && window.innerWidth >= 380) {
         window.scrollTo({
-          top: innerHeight * 4.7,
+          top: window.innerHeight * 4.7,
           behavior: "smooth",
         });
       }
       if (next !== 3) {
         window.scrollTo({
-          top: innerHeight * next,
+          top: window.innerHeight * next,
           behavior: "smooth",
         });
       }
       if (window.innerWidth >= 700) {
         window.scrollTo({
-          top: innerHeight * next,
+          top: window.innerHeight * next,
           behavior: "smooth",
         });
       }
@@ -299,7 +299,7 @@ const Dynamic = () => {
     if (next !== 1) {
       setNext((prev: number) => prev - 1);
       window.scrollTo({
-        top: innerHeight * (next - 1) - innerHeight,
+        top: window.innerHeight * (next - 1) - window.innerHeight,
         behavior: "smooth",
       });
     }
@@ -313,12 +313,15 @@ const Dynamic = () => {
       if (offsetY < window.innerHeight && offsetY >= 0) {
         setNext(1);
         setPosition("Home");
-      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+      } else if (
+        offsetY < window.innerHeight * 2 &&
+        offsetY >= window.innerHeight
+      ) {
         setNext(2);
         setPosition("Resume");
       } else if (
-        offsetY < innerHeight * 4.9 - 2 &&
-        offsetY >= innerHeight * 2
+        offsetY < window.innerHeight * 4.9 - 2 &&
+        offsetY >= window.innerHeight * 2
       ) {
         setNext(3);
         setPosition("Skill");
@@ -331,15 +334,18 @@ const Dynamic = () => {
       if (offsetY === 0) {
         return;
       }
-      if (offsetY < innerHeight && offsetY >= 0) {
+      if (offsetY < window.innerHeight && offsetY >= 0) {
         setNext(1);
         setPosition("Home");
-      } else if (offsetY < innerHeight * 2 - 2 && offsetY >= innerHeight) {
+      } else if (
+        offsetY < window.innerHeight * 2 - 2 &&
+        offsetY >= window.innerHeight
+      ) {
         setNext(2);
         setPosition("Resume");
       } else if (
-        offsetY < innerHeight * 4.7 - 2 &&
-        offsetY >= innerHeight * 2
+        offsetY < window.innerHeight * 4.7 - 2 &&
+        offsetY >= window.innerHeight * 2
       ) {
         setNext(3);
         setPosition("Skill");
@@ -352,13 +358,19 @@ const Dynamic = () => {
       if (offsetY === 0) {
         return;
       }
-      if (offsetY < innerHeight && offsetY >= 0) {
+      if (offsetY < window.innerHeight && offsetY >= 0) {
         setNext(1);
         setPosition("Home");
-      } else if (offsetY < innerHeight * 2 && offsetY >= innerHeight) {
+      } else if (
+        offsetY < window.innerHeight * 2 &&
+        offsetY >= window.innerHeight
+      ) {
         setNext(2);
         setPosition("Resume");
-      } else if (offsetY < innerHeight * 3 - 2 && offsetY >= innerHeight * 2) {
+      } else if (
+        offsetY < window.innerHeight * 3 - 2 &&
+        offsetY >= window.innerHeight * 2
+      ) {
         setNext(3);
         setPosition("Skill");
       } else {
