@@ -140,7 +140,7 @@ const ItemBox = styled.div`
   align-items: center;
 `;
 const Item = styled.div`
-  width: 95%;
+  width: 90%;
 
   height: 100%;
   background-position: center;
@@ -307,7 +307,7 @@ const Skill = () => {
                 whileHover="animate"
               >
                 <CardName>Tool</CardName>
-                <CardDes style={{ height: "80%" }}>
+                <CardDes>
                   <ItemBox>
                     <Item
                       style={{
@@ -318,7 +318,7 @@ const Skill = () => {
                     <Item
                       style={{
                         backgroundImage:
-                          "url('https://logos-world.net/wp-content/uploads/2020/11/GitHub-Emblem.png')",
+                          "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/GitHub_logo_2013.svg/2560px-GitHub_logo_2013.svg.png')",
                       }}
                     />
                   </ItemBox>
@@ -330,7 +330,7 @@ const Skill = () => {
                 whileHover="animate"
               >
                 <CardName>Deployment</CardName>
-                <CardDes style={{ height: "80%" }}>
+                <CardDes>
                   <ItemBox>
                     <Item
                       style={{
