@@ -260,7 +260,7 @@ const Dynamic = () => {
       setNext((prev: number) => prev + 1);
       if (next === 3 && window.innerWidth <= 500) {
         window.scrollTo({
-          top: innerHeight * 4.7,
+          top: innerHeight * 4.9,
           behavior: "smooth",
         });
       } else {

@@ -81,6 +81,7 @@ const ThirdCard = styled(motion.div)`
   @media screen and (max-width: 480px) {
     width: 300px;
     margin: 20px 0px;
+    min-height: 420px;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 420px;

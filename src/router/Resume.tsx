@@ -10,7 +10,7 @@ const Container = styled(motion.div)`
   position: sticky;
   top: 0px;
   @media screen and (max-width: 480px) {
-    height: 270vh;
+    height: 290vh;
   }
 `;
 const InnerContainer = styled.div`
@@ -21,7 +21,7 @@ const InnerContainer = styled.div`
   justify-content: start;
   flex-direction: column;
   @media screen and (max-width: 480px) {
-    height: 270vh;
+    height: 290vh;
   }
 `;
 
@@ -30,6 +30,16 @@ const H1 = styled.div`
   padding: 50px;
   font-size: 2.3rem;
   color: ${(props) => props.theme.bgTitle2};
+  @media screen and (max-width: 379px) {
+    padding: 0;
+    margin-top: 70px;
+    margin-bottom: 120px;
+  }
+  @media screen and (min-width: 380px) and (max-width: 480px) {
+    padding: 0;
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     padding: 0px;
     margin-top: 160px;
