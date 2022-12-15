@@ -270,7 +270,7 @@ const Dynamic = () => {
       setNext((prev: number) => prev + 1);
       if (next === 3 && window.innerWidth <= 379) {
         window.scrollTo({
-          top: innerHeight * 4.9,
+          top: innerHeight * 5.1,
           behavior: "smooth",
         });
       }
@@ -317,7 +317,7 @@ const Dynamic = () => {
         setNext(2);
         setPosition("Resume");
       } else if (
-        offsetY < innerHeight * 4.9 - 2 &&
+        offsetY < innerHeight * 5.1 - 2 &&
         offsetY >= innerHeight * 2
       ) {
         setNext(3);
