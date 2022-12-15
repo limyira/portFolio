@@ -264,34 +264,55 @@ const Dynamic = () => {
   const increasePage = () => {
     if (next === 4) {
       return;
-    }
-    if (next !== 4) {
+    } else {
       setNext((prev: number) => prev + 1);
-      if (next === 3 && window.innerWidth <= 379) {
-        window.scrollTo({
-          top: window.innerHeight * 4.9,
-          behavior: "smooth",
-        });
-      }
-      if (next === 3 && window.innerWidth <= 500 && window.innerWidth >= 380) {
-        window.scrollTo({
-          top: window.innerHeight * 4.7,
-          behavior: "smooth",
-        });
-      }
-      if (next !== 3) {
-        window.scrollTo({
-          top: window.innerHeight * next,
-          behavior: "smooth",
-        });
-      }
-      if (window.innerWidth >= 700) {
-        window.scrollTo({
-          top: window.innerHeight * next,
-          behavior: "smooth",
-        });
+      window.scrollTo({
+        top: window.innerHeight * next,
+        behavior: "smooth",
+      });
+      if (next === 3) {
+        if (window.innerWidth >= 380 && window.innerWidth <= 500) {
+          window.scrollTo({
+            top: window.innerHeight * 4.7,
+            behavior: "smooth",
+          });
+        }
+        if (window.innerWidth < 380) {
+          window.scrollTo({
+            top: window.innerHeight * 4.9,
+            behavior: "smooth",
+          });
+        }
       }
     }
+    // if (next !== 4) {
+    //   setNext((prev: number) => prev + 1);
+    //   if (next !== 3) {
+    //     window.scrollTo({
+    //       top: window.innerHeight * next,
+    //       behavior: "smooth",
+    //     });
+    //   }
+    //   if (next === 3 && window.innerWidth <= 379) {
+    //     window.scrollTo({
+    //       top: window.innerHeight * 4.9,
+    //       behavior: "smooth",
+    //     });
+    //   }
+    //   if (next === 3 && window.innerWidth <= 500 && window.innerWidth >= 380) {
+    //     window.scrollTo({
+    //       top: window.innerHeight * 4.7,
+    //       behavior: "smooth",
+    //     });
+    //   }
+
+    //   if (window.innerWidth >= 700) {
+    //     window.scrollTo({
+    //       top: window.innerHeight * next,
+    //       behavior: "smooth",
+    //     });
+    //   }
+    // }
   };
 
   const decreasePage = () => {

@@ -56,9 +56,6 @@ function App() {
       setPage(1);
       window.scrollTo(0, 0);
     };
-    scrollY.onChange(() => {
-      console.log(scrollY.get(), window.innerHeight);
-    });
   }, [scrollY]);
   return (
     <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
