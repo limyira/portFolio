@@ -46,6 +46,7 @@ const TagBox = styled.div`
   width: 50%;
   height: 12%;
   background-color: ${(props) => props.theme.consoleBgColor};
+
   @media screen and (max-width: 369px) {
     width: 90%;
     font-size: 0.6rem;
@@ -142,6 +143,7 @@ const H1InnerBox = styled.div`
   @media screen and (max-width: 369px) {
     width: 80%;
     font-size: 0.8rem;
+    height: fit-content;
   }
 
   @media screen and (min-width: 370px) and (max-width: 389px) {
@@ -245,7 +247,7 @@ const H1InnerBoxWrapper = styled.div`
   @media screen and (max-width: 369px) {
     font-size: 0.3rem;
     width: 90%;
-    height: 50%;
+    height: fit-content;
   }
   @media screen and (min-width: 370px) and (max-width: 430px) {
     font-size: 0.5rem;
