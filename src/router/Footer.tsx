@@ -36,15 +36,15 @@ const Personal = styled.div`
   background-color: ${(props) => props.theme.resumeBo};
   @media screen and (max-width: 379px) {
     width: 85%;
-    height: 38%;
+    height: 36%;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   @media screen and (min-width: 380px) and (max-width: 480px) {
     width: 85%;
-    height: 40%;
+    height: 35%;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 76%;
@@ -100,7 +100,7 @@ const Left = styled.div`
   font-size: 1.3rem;
 
   @media screen and (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
     width: fit-content;
     height: 50%;
   }
@@ -128,7 +128,8 @@ const Right = styled.div`
   height: 100%;
   width: fit-content;
   @media screen and (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
+
     margin-top: 10px;
     height: 50%;
   }
@@ -196,7 +197,8 @@ const H1 = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   @media screen and (max-width: 480px) {
     font-size: 1.6rem;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    height: 10%;
   }
 `;
 const Contents = styled.div`

@@ -62,7 +62,7 @@ const Project = () => {
         <Board>
           <H1>
             <h1>
-              {"<"}ProJect{"/>"}
+              {"<"}Project{"/>"}
             </h1>
           </H1>
           <Card />
