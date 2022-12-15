@@ -260,7 +260,6 @@ const Dynamic = () => {
   const [offsetY, setOffsetY] = useRecoilState(YState);
   const [next, setNext] = useRecoilState(pageNumber);
   const [innerHeight, setInnerHeight] = useRecoilState(HeightState);
-  const maxHeight = innerHeight * 4;
   const [position, setPosition] = useState("Home");
   const increasePage = () => {
     if (next === 4) {
