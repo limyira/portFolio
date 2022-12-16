@@ -155,12 +155,13 @@ const H1InnerBox = styled.div`
     width: 90%;
     font-size: 1.1rem;
   }
-  @media screen and (min-width: 431px) and (max-width: 799px) {
+  @media screen and (min-width: 431px) and (max-width: 770px) {
     font-size: 1.6rem;
     width: 80%;
   }
-
-  @media screen and (min-width: 800px) and (max-width: 1200px) {
+  @media screen and (min-width: 771px) and (max-width: 929px) {
+  }
+  @media screen and (min-width: 930px) and (max-width: 1200px) {
     width: 70%;
     font-size: 1.7rem;
   }
@@ -171,26 +172,29 @@ const H1 = styled.h1`
   color: ${(props) => props.theme.textColor};
   @media screen and (max-width: 369px) {
     width: 90%;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   @media screen and (min-width: 370px) and (max-width: 389px) {
     width: 80%;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   @media screen and (min-width: 390px) and (max-width: 430px) {
     width: 90%;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
-  @media screen and (min-width: 431px) and (max-width: 799px) {
-    font-size: 1.6rem;
+  @media screen and (min-width: 431px) and (max-width: 782px) {
+    font-size: 1.3rem;
     width: 90%;
   }
-
-  @media screen and (min-width: 800px) and (max-width: 1200px) {
+  @media screen and (min-width: 783px) and (max-width: 920px) {
+    font-size: 1.5rem;
     width: 100%;
-    font-size: 1.9rem;
+  }
+  @media screen and (min-width: 921px) and (max-width: 1350px) {
+    width: 100%;
+    font-size: 1.7rem;
   }
 `;
 const Span = styled.span`
@@ -210,7 +214,7 @@ const Des = styled.p`
   }
 
   @media screen and (min-width: 390px) and (max-width: 430px) {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   @media screen and (min-width: 431px) and (max-width: 799px) {
     font-size: 1rem;
@@ -244,6 +248,7 @@ const H1InnerBoxWrapper = styled.div`
   display: flex;
   color: ${(props) => props.theme.remarkColor};
   padding: 6px;
+  min-height: fit-content;
   @media screen and (max-width: 369px) {
     font-size: 0.3rem;
     width: 90%;
@@ -252,23 +257,24 @@ const H1InnerBoxWrapper = styled.div`
   @media screen and (min-width: 370px) and (max-width: 430px) {
     font-size: 0.5rem;
     width: 90%;
-    height: 41%;
+    min-height: fit-content;
   }
   @media screen and (min-width: 431px) and (max-width: 799px) {
     font-size: 1rem;
     width: 90%;
-    height: 52%;
+    min-height: fit-content;
   }
   @media screen and (min-width: 800px) and (max-width: 1200px) {
     font-size: 1rem;
     width: 90%;
-    height: 42%;
+    min-height: fit-content;
   }
 `;
 const NumberBox = styled.div`
   display: flex;
   height: fit-content;
   flex-direction: column;
+  min-height: fit-content;
   span {
     margin-bottom: 2px;
   }

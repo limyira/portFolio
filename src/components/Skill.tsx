@@ -15,7 +15,7 @@ const InnerCardBox = styled.div`
   padding: 2rem;
   @media screen and (min-width: 481px) and (max-width: 850px) {
     width: 95%;
-    height: 100%;
+    height: 80%;
   }
 `;
 
@@ -42,11 +42,15 @@ const FirstCard = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   height: 200px;
   margin-bottom: 20px;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 450px) {
     margin: 20px auto;
+    width: 300px;
   }
-  @media screen and (min-width: 481px) and (max-width: 850px) {
+  @media screen and (min-width: 451px) and (max-width: 829px) {
     width: 200px;
+  }
+  @media screen and (min-width: 830px) and (max-width: 1350px) {
+    width: 250px;
   }
 `;
 const SecondCard = styled(motion.div)`
@@ -58,15 +62,15 @@ const SecondCard = styled(motion.div)`
   padding: 10px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 450px) {
     margin: 20px auto;
+    width: 300px;
   }
-
-  @media screen and (min-width: 481px) and (max-width: 850px) {
+  @media screen and (min-width: 451px) and (max-width: 829px) {
     width: 200px;
   }
-  @media screen and (min-width: 851px) and (max-width: 1400px) {
-    height: 300px;
+  @media screen and (min-width: 830px) and (max-width: 1350px) {
+    width: 250px;
   }
 `;
 const ThirdCard = styled(motion.div)`
@@ -78,16 +82,17 @@ const ThirdCard = styled(motion.div)`
   margin-right: 20px;
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 450px) {
     width: 300px;
     margin: 20px 0px;
-    min-height: 420px;
   }
-  @media screen and (min-width: 481px) and (max-width: 850px) {
+  @media screen and (min-width: 451px) and (max-width: 829px) {
     width: 420px;
+    min-width: 200px;
   }
-  @media screen and (min-width: 851px) and (max-width: 1400px) {
+  @media screen and (min-width: 830px) and (max-width: 1350px) {
     height: 500px;
+    min-width: 250px;
   }
 `;
 const LastCard = styled(motion.div)`
@@ -99,14 +104,15 @@ const LastCard = styled(motion.div)`
   cursor: pointer;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   margin-bottom: 20px;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 450px) {
     width: 300px;
   }
-  @media screen and (min-width: 481px) and (max-width: 850px) {
+  @media screen and (min-width: 451px) and (max-width: 829px) {
     width: 200px;
   }
-  @media screen and (min-width: 851px) and (max-width: 1400px) {
+  @media screen and (min-width: 830px) and (max-width: 1350px) {
     height: 180px;
+    max-width: 200px;
   }
 `;
 const CardName = styled.div`

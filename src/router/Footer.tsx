@@ -34,6 +34,8 @@ const Personal = styled.div`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
   border-radius: 2rem;
   background-color: ${(props) => props.theme.resumeBo};
+  min-width: fit-content;
+  min-height: fit-content;
   @media screen and (max-width: 379px) {
     width: 85%;
     height: 36%;
@@ -253,6 +255,11 @@ const ContentDes = styled.div`
     font-size: 0.7rem;
     margin-top: 5px;
     line-height: 1.2rem;
+  }
+  @media screen and (min-width: 481px) and (max-width: 750px) {
+    font-size: 0.7rem;
+    margin-top: 5px;
+    line-height: 1.4rem;
   }
   span {
     color: ${(props) => props.theme.accentColor};

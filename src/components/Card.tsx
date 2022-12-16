@@ -31,8 +31,8 @@ const Item = styled(motion.div)`
     min-width: 15rem;
   }
   @media screen and (min-width: 481px) and (max-width: 850px) {
-    min-height: 40rem;
-    min-width: 24rem;
+    min-height: 30rem;
+    min-width: 20rem;
   }
   @media screen and (min-width: 851px) and (max-width: 1400px) {
     min-height: 32rem;
